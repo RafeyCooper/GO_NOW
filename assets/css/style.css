@@ -42,7 +42,6 @@
 
 body {
     font-family: 'montserrat-arabic';
-    overflow: hidden;
 }
 
 
@@ -185,6 +184,7 @@ nav {
     display: flex;
     justify-content: center;
     gap: 25px;
+    overflow: hidden;
 }
 
 .app-store,
@@ -336,6 +336,10 @@ nav {
     overflow: hidden;
 }
 
+.go-now-heading-box{
+    overflow: hidden;
+}
+
 .wave-box img {
     width: 186%;
     margin-left: -73%;
@@ -389,6 +393,10 @@ nav {
     left: 63%;
     width: 34px;
     z-index: -1;
+}
+
+.main-paragarph-div{
+    overflow: hidden;
 }
 
 /* .increase-box {
@@ -538,6 +546,7 @@ nav {
 .third-section {
     background-color: #4f48ff;
     position: relative;
+    overflow: hidden;
 }
 
 .third-section {
