@@ -1,0 +1,604 @@
+@font-face {
+    font-family: 'montserrat-arabic';
+    src: url('/assets/font/Montserrat-Arabic\ Thin\ 250.otf');
+    font-weight: 250;
+}
+
+@font-face {
+    font-family: 'montserrat-arabic';
+    src: url('/assets/font/Montserrat-Arabic\ Light\ 300.otf');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'montserrat-arabic';
+    src: url('/assets/font/Montserrat-Arabic\ Regular\ 400.otf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'montserrat-arabic';
+    src: url('/assets/font/Montserrat-Arabic\ Medium\ 500.otf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'montserrat-arabic';
+    src: url('/assets/font/Montserrat-Arabic\ SemiBold\ 600.otf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'montserrat-arabic';
+    src: url('/assets/font/Montserrat-Arabic\ Bold\ 700.otf');
+    font-weight: 700;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'montserrat-arabic';
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px;
+    align-items: center;
+    position: fixed;
+    /* Make the nav fixed */
+    top: 0;
+    /* Stick to the top of the viewport */
+    left: 0;
+    right: 0;
+    background-color: white;
+    /* Optional: Set background color so it's visible on scroll */
+    z-index: 1000;
+    /* Ensure the nav stays on top of other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Optional: Add a shadow for better visibility */
+}
+
+.logo {
+    font-size: 29px;
+    font-weight: 700;
+}
+
+.link {
+    margin-right: 21px;
+}
+
+.link a {
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 700;
+    color: #5b60f6;
+}
+
+.hamburger-icon {
+    font-size: 32px;
+}
+
+.hamburger-icon-box {
+    /* border: 1px solid black; */
+    /* width: 35px; */
+    /* height: 35px; */
+    padding: 4px;
+    border-radius: 35px;
+    box-shadow: 0px 0px 11px -6px #000;
+}
+
+.dropdown-menu-custom {
+    display: none;
+    position: absolute;
+    top: 84px;
+    width: 90%;
+    /* right: 10px; */
+    background-color: #0000007a;
+    backdrop-filter: blur(5px);
+    border-radius: 0px 0px 5px 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu-custom ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-menu-custom ul li {
+    padding: 10px;
+}
+
+.dropdown-menu-custom ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'montserrat-arabic';
+    display: block;
+    font-size: 15px;
+}
+
+.dropdown-menu-custom ul li:hover {
+    background-color: #444;
+}
+
+.dropdown-menu-custom.show {
+    display: block; /* Show the menu */
+}
+
+/* 
+.hero-section {
+    min-height: 400px;
+    background-image: url('/assets/img/background-hero-img.png');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top; 
+    position: relative;
+    margin-top: 84px;
+} */
+
+.hero-section {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-section img {
+    width: 100%;
+    margin-top: 84px;
+}
+
+.heading {
+    width: 100%;
+    text-align: center;
+    margin-top: -20px;
+    position: relative;
+    z-index: 9;
+}
+
+.heading h1 {
+    font-size: 35px;
+    margin: 0;
+    background: transparent;
+    font-family: 'montserrat-arabic';
+}
+
+/* .main-section-hero {
+    border: 1px solid black;
+} */
+
+.main-download-section {
+    background-color: #fafafa;
+    padding-top: 10px;
+    margin-top: 26px;
+    padding-bottom: 10px;
+}
+
+.download-section {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.app-store,
+.google-play {
+    display: flex;
+    align-items: center;
+}
+
+.text p {
+    margin: 0;
+}
+
+.apple-icon,
+.playstore-icon {
+    color: #8791a0;
+    font-size: 25px;
+    margin-right: 6px;
+}
+
+.second-text,
+.first-text {
+    color: #8791a0;
+    font-family: 'montserrat-arabic';
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+}
+
+.first-text {
+    font-size: 8.9px;
+    font-weight: 400;
+}
+
+.second-text {
+    font-size: 16px;
+    margin-top: -5px !important;
+}
+
+.download-button-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.download-button-box button {
+    border: none;
+    background-color: #4958fd;
+    padding: 7px 23px;
+    color: white;
+    font-size: 16px;
+    border-radius: 40px;
+    box-shadow: 0px 4px 7px -1px #4958fd;
+    font-family: 'montserrat-arabic';
+}
+
+.phone-coins-section {
+    position: relative;
+}
+
+.phone-img-box {
+    width: 100%;
+    overflow: hidden;
+    padding: 30px 0px;
+    padding-bottom: 0;
+}
+
+.phone-img {
+    width: 500px;
+    transform: rotate(-9deg);
+    margin-left: -240px;
+}
+
+.main-mini-box {
+    position: absolute;
+    top: 85px;
+    left: 38%;
+    border-radius: 17px;
+    background-color: white;
+    box-shadow: 0px 0px 21px -8px #4958fd;
+}
+
+.main-mini-box2 {
+    position: absolute;
+    top: 85px;
+    left: 66%;
+    border-radius: 17px;
+    background-color: white;
+    box-shadow: 0px 0px 21px -8px #4958fd;
+    transform: rotate(5deg);
+}
+
+.mini-box {
+    width: 80px;
+    height: 80px;
+    padding: 10px 0px;
+    text-align: center;
+    border-radius: 17px;
+    position: relative;
+}
+
+.mini-box h2 {
+    font-size: 27px;
+    margin: 0;
+    font-weight: 800;
+    color: #4958fd;
+}
+
+.mini-box p {
+    font-size: 10px;
+    margin: 0;
+    margin-top: 6px;
+    font-weight: 800;
+    color: #4958fd;
+}
+
+.discount-tag {
+    position: absolute;
+    top: -7px;
+    left: -10px;
+    font-size: 14px;
+    background-color: #ffd323;
+    width: 69px;
+    border-radius: 16px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.discount-tag p {
+    color: black;
+    margin: 0;
+}
+
+.dollar {
+    position: absolute;
+    top: 19px;
+    left: 76%;
+    width: 50px;
+}
+
+.wave-box {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.wave-box img {
+    width: 186%;
+    margin-left: -73%;
+}
+
+.coins-box {
+    position: absolute;
+    top: 56px;
+    z-index: -1;
+}
+
+.coins-box img {
+    width: 60%;
+    margin-left: 91px;
+}
+
+.increase-box{
+    position: absolute;
+    top: 265px;
+    overflow: hidden;
+}
+.increase-box img {
+    width: 58%;
+    margin-left: 36%;
+}
+
+.decrease-box{
+    position: absolute;
+    top: 358px;
+    overflow: hidden;
+}
+
+.decrease-box img{
+    width: 58%;
+    margin-left: 22%;
+}
+
+.dollar2 {
+    position: absolute;
+    top: 170px;
+    left: 26%;
+    width: 34px;
+    z-index: -1;
+    filter: blur(1px);
+    /* Apply a blur effect */
+}
+
+.dollar3 {
+    position: absolute;
+    top: 170px;
+    left: 63%;
+    width: 34px;
+    z-index: -1;
+}
+
+/* .increase-box {
+    width: 111px;
+    position: absolute;
+    top: 0px;
+} */
+
+.top-text {
+    font-weight: 900;
+}
+
+.top-text span {
+    color: #00bf63;
+}
+
+.increase-arrow {
+    color: #00bf63;
+    font-size: 25px;
+    transform: rotate(-42deg);
+}
+
+.bottom {
+    display: flex;
+}
+
+.arrow-icon-box {
+    background-color: #c0efd8;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 35px;
+}
+
+.text-date {
+    font-size: 11px;
+    font-weight: 700;
+    color: #dbdbdb;
+}
+
+
+
+
+.swiper-container {
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 20px;
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+    direction: rtl;
+    /* Set container to RTL */
+}
+
+.swiper-wrapper {
+    display: flex;
+    /* Ensure horizontal layout */
+    flex-direction: row;
+    /* Ensure the slides go horizontally */
+}
+
+.swiper-slide {
+    height: 200px;
+    /* Slide height */
+    position: relative;
+    border-radius: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.swiper-slide {
+    height: 200px;
+    /* Slide height */
+    position: relative;
+    border-radius: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.swiper-slide img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.go-now-heading {
+    direction: rtl;
+    /* Set text direction to RTL */
+    text-align: right;
+    /* Align the text to the right */
+    width: 100%;
+    padding: 10px 20px;
+    font-weight: 700;
+    font-family: 'montserrat-arabic';
+}
+
+.highlight,
+.go-text {
+    color: #4f48ff;
+    /* Change the color of "Now!" */
+}
+
+.paragraph {
+    direction: rtl;
+    text-align: right;
+    margin: 40px 20px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 25px -12px rgba(0, 0, 0, 0.329);
+    position: relative;
+}
+
+.box-heading {
+    font-weight: 700;
+    padding: 0px 33px;
+    font-family: 'montserrat-arabic';
+    font-size: 26px;
+    margin-top: 17px;
+}
+
+.box-subheading {
+    font-weight: 700;
+    font-size: 17px;
+    color: #4f48ff;
+    padding: 0px 33px;
+    font-family: 'montserrat-arabic';
+}
+
+.box-para {
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    font-family: 'montserrat-arabic';
+}
+
+.box-icon {
+    width: 57px;
+    position: absolute;
+    top: -5px;
+    right: -8px;
+}
+
+.third-section {
+    background-color: #4f48ff;
+    position: relative;
+}
+
+.third-section {
+    margin: 10px 20px;
+    border-radius: 20px;
+    padding: 50px 0px;
+}
+
+.third-section-heading {
+    direction: rtl;
+    text-align: right;
+    font-size: 26px;
+    color: white;
+    padding: 0px 20px;
+    font-family: 'montserrat-arabic';
+
+}
+
+.third-section-subheading {
+    direction: rtl;
+    text-align: right;
+    font-size: 21px;
+    color: white;
+    font-weight: 300;
+    padding: 30px 20px;
+    font-family: 'montserrat-arabic';
+}
+
+.third-section-button-box {
+    display: flex;
+    justify-content: end;
+    padding: 0px 20px;
+}
+
+.third-section-button {
+    border: none;
+    padding: 12px 25px;
+    background-color: white;
+    font-family: 'montserrat-arabic';
+    font-weight: 300;
+    border-radius: 30px;
+}
+
+.mobile-in-hand{
+    width: 100%;
+    margin-bottom: -50px;
+}
+
+@media only screen and (max-width : 400px){
+    .box-heading{
+        font-size: 20px;
+    }
+    .box-subheading{
+        font-size: 11px;
+    }
+    .box-para{
+        font-size: 11px;
+    }
+    .third-section-heading{
+        font-size: 20px;
+    }
+    .third-section-subheading{
+        font-size: 15px;
+    }
+}
