@@ -1,7 +1,7 @@
 AOS.init();
 const swiper = new Swiper('.swiper-container', {
     slidesPerView: 1.5,
-    spaceBetween: 15,
+    spaceBetween: 0,
     centeredSlides: true,
     pagination: {
         el: '.swiper-pagination',

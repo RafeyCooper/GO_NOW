@@ -61,7 +61,7 @@ nav {
     z-index: 1000;
     /* Ensure the nav stays on top of other content */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    /* Optional: Add a shadow for better visibility */
+    height: 100px;
 }
 
 .logo {
@@ -96,7 +96,7 @@ nav {
 .dropdown-menu-custom {
     display: none;
     position: absolute;
-    top: 84px;
+    top: 100px;
     width: 90%;
     /* right: 10px; */
     background-color: #0000007a;
@@ -147,11 +147,11 @@ nav {
 .hero-section {
     position: relative;
     z-index: 1;
+    margin-top: 100px;
 }
 
 .hero-section img {
     width: 100%;
-    margin-top: 84px;
 }
 
 .heading {
