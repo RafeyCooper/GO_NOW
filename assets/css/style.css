@@ -639,7 +639,8 @@ nav {
 
 .box-heading {
     font-weight: 700;
-    padding: 0px 33px;
+    /* padding: 0px 53px; */
+    padding-right: 53px;
     font-family: 'montserrat-arabic';
     font-size: 26px;
     margin-top: 17px;
@@ -649,7 +650,8 @@ nav {
     font-weight: 700;
     font-size: 15px;
     color: #4f48ff;
-    padding: 0px 33px;
+    /* padding: 0px 53px; */
+    padding-right: 53px;
     font-family: 'montserrat-arabic';
 }
 
@@ -662,28 +664,28 @@ nav {
 }
 
 .box-icon {
-    width: 57px;
+    width: 77px;
     position: absolute;
-    top: -5px;
+    top: -12px;
     right: -8px;
 }
 
 .coin-icon {
-    width: 85px;
+    width: 94px;
     position: absolute;
-    top: -8px;
-    right: -22px;
+    top: -10px;
+    right: -25px;
 }
 
 .car-icon {
-    width: 68px;
+    width: 84px;
     position: absolute;
-    top: -8px;
+    top: -13px;
     right: -12px;
 }
 
 .third-section {
-    background-color: #4f48ff;
+    background-color: #5b60f6;
     position: relative;
     overflow: hidden;
 }
@@ -707,7 +709,7 @@ nav {
 .third-section-subheading {
     direction: rtl;
     text-align: right;
-    font-size: 21px;
+    font-size: 18px;
     color: white;
     font-weight: 300;
     padding: 30px 20px;
@@ -725,13 +727,14 @@ nav {
     padding: 12px 25px;
     background-color: white;
     font-family: 'montserrat-arabic';
-    font-weight: 300;
+    font-weight: 600;
     border-radius: 30px;
 }
 
 .mobile-in-hand {
     width: 100%;
     margin-bottom: -50px;
+    padding-top: 70px;
 }
 
 .parallex-effect-img {
@@ -903,6 +906,8 @@ footer {
     display: flex;
     justify-content: center;
     position: relative;
+    text-decoration: none;
+    color: black;
 }
 
 .email p {
@@ -930,6 +935,8 @@ footer {
     display: flex;
     justify-content: center;
     position: relative;
+    text-decoration: none;
+    color: black;
 }
 
 .dialer p {
