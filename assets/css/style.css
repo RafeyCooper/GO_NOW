@@ -1052,7 +1052,7 @@ footer {
     text-align: center;
     font-weight: 800;
     display: flex;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 
@@ -1085,38 +1085,38 @@ footer {
     transform: translateY(0); /* End position (no translation) */
 }
 
+.cities-number span {
+    /* animation: dropIn 5s ease-in-out; */
+}
+
 @keyframes dropIn {
     0% {
         visibility: visible;
-        transform: translateY(-100px); /* Start above */
     }
     50% {
-        transform: translateY(100px); /* Drop down */
+        transform: translateY(-100px);
     }
     80% {
-        visibility: visible;  /* Keep it visible during the animation */
+        visibility: hidden;
     }
     100% {
-        transform: translateY(100px); /* Keep it dropped during iteration */
+        transform: translateY(0px);
     }
 }
 
-/* Final iteration - bring back to 0 position */
-@keyframes dropInFinal {
+@keyframes finalDropIn {
     0% {
-        visibility: visible;
-        transform: translateY(-100px); /* Start above */
+        transform: translateY(0px);
     }
     50% {
-        transform: translateY(100px); /* Drop down */
-    }
-    80% {
-        visibility: visible;
+        transform: translateY(100px);
     }
     100% {
-        transform: translateY(0); /* Finally, return to the original position */
+        transform: translateY(0px);
     }
 }
+
+
 
 .number-char {
     display: inline-block;

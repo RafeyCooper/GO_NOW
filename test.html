@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .number-char {
+        display: inline-block;
+        opacity: 1;
+        font-size: 40px;
+        font-weight: bold;
+        position: relative;
+    }
+
+    /* Animation for dropping from top */
+    @keyframes dropIn {
+        0% {
+            transform: translateY(-100px); /* Start above */
+        }
+        50% {
+            transform: translateY(100px); /* Drop down */
+        }
+        100% {
+            transform: translateY(100px); /* Stay dropped during iteration */
+        }
+    }
+
+    /* Animation for the last iteration - move back to 0 position */
+    @keyframes dropInFinal {
+        0% {
+            transform: translateY(-100px); /* Start above */
+        }
+        50% {
+            transform: translateY(100px); /* Drop down */
+        }
+        100% {
+            transform: translateY(0); /* Return to original position */
+        }
+    }
+
+    .number-char {
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+    }
+</style>
+<body>
+    <div id="numbers">
+        <div id="cities-number">+27</div>
+        <div id="clients-number">+27,644</div>
+    </div> 
+</body>
+</html>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    function animateNumbers() {
+        const citiesNumberElement = document.getElementById('cities-number');
+        const clientsNumberElement = document.getElementById('clients-number');
+
+        // Split the numbers into individual characters (for animation)
+        splitAndAnimateNumber(citiesNumberElement);
+        splitAndAnimateNumber(clientsNumberElement);
+    }
+
+    function splitAndAnimateNumber(element) {
+        const numberText = element.textContent.trim();
+        element.innerHTML = ''; // Clear the existing content
+
+        // Split number text into individual characters and wrap them in span
+        numberText.split('').forEach((char, index) => {
+            const span = document.createElement('span');
+            span.classList.add('number-char');
+            span.textContent = char;
+
+            // Apply animation based on the iteration count
+            if (index + 1 === numberText.length) {
+                // Apply the final animation for the last character
+                span.style.animation = `dropInFinal 1s ease-in-out forwards`;
+            } else {
+                // Apply the regular drop animation for others
+                span.style.animation = `dropIn 1s ease-in-out forwards`;
+            }
+
+            // Apply animation delay for staggered effect
+            span.style.animationDelay = `${index * 0.5}s`;
+
+            element.appendChild(span);
+        });
+    }
+
+    // Call the function to start the animation
+    animateNumbers();
+});
+</script>
