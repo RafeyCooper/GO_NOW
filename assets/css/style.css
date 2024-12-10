@@ -966,6 +966,47 @@ footer {
     height: auto;
 }
 
+.car-section {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.car-section img {
+    width: 56%;
+}
+
+.car-black,
+.car-pink,
+.car-white {
+    transform: translateX(-30px);
+    opacity: 0;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.car-black.animated,
+.car-pink.animated,
+.car-white.animated {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.car-black {
+    position: relative;
+    z-index: 3;
+}
+
+.car-pink {
+    position: relative;
+    z-index: 2;
+    margin-left: -30%;
+}
+
+.car-white {
+    position: relative;
+    z-index: 1;
+    margin-left: -30%;
+}
 
 @media only screen and (max-width : 400px) {
     .box-heading {
@@ -991,11 +1032,11 @@ footer {
     .fourh-section-heading {
         font-size: 30px;
     }
-    
+
     .rockey-money-img {
         width: 50px;
     }
-    
+
     .fourh-section-subheading {
         font-size: 19px;
     }
@@ -1006,11 +1047,11 @@ footer {
     .fourh-section-heading {
         font-size: 25px;
     }
-    
+
     .rockey-money-img {
         width: 40px;
     }
-    
+
     .fourh-section-subheading {
         font-size: 16px;
     }

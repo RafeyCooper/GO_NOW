@@ -55,3 +55,39 @@ $(document).ready(function() {
         $(this).removeClass('show'); // Hide overlay
     });
 });
+
+
+// Function to add the animation class with delay
+function animateCars() {
+    const blackCar = document.querySelector('.car-black');
+    const pinkCar = document.querySelector('.car-pink');
+    const whiteCar = document.querySelector('.car-white');
+  
+    // Add the 'animated' class to black car immediately
+    blackCar.classList.add('animated');
+  
+    // Add the 'animated' class to pink car with a delay
+    setTimeout(() => {
+      pinkCar.classList.add('animated');
+    }, 100); // 300ms delay
+  
+    // Add the 'animated' class to white car with another delay
+    setTimeout(() => {
+      whiteCar.classList.add('animated');
+    }, 200); // 600ms delay
+  }
+  
+  function checkScroll() {
+    const carsSection = document.querySelector('.car-section'); // or any parent container of cars
+    const position = carsSection.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.2; // Adjust this as needed
+  
+    if (position < screenPosition) {
+      animateCars(); // Trigger the animation when the section is in view
+      window.removeEventListener('scroll', checkScroll); // Remove scroll event after animation
+    }
+  }
+  
+  // Listen for the scroll event to trigger the animation when in view
+  window.addEventListener('scroll', checkScroll);
+  
