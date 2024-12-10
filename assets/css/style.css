@@ -970,10 +970,11 @@ footer {
     overflow: hidden;
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 .car-section img {
-    width: 56%;
+    width: 61%;
 }
 
 .car-black,
@@ -993,20 +994,232 @@ footer {
 
 .car-black {
     position: relative;
-    z-index: 3;
+    z-index: 8;
 }
 
 .car-pink {
     position: relative;
-    z-index: 2;
-    margin-left: -30%;
+    z-index: 7;
+    margin-left: -33%;
 }
 
 .car-white {
     position: relative;
-    z-index: 1;
-    margin-left: -30%;
+    z-index: 6;
+    margin-left: -32%;
 }
+
+.back-glow{
+    width: 100% !important;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+}
+
+.numbers-section{
+    overflow: hidden;
+    
+}
+
+.number-section-logo {
+    text-align: center;
+}
+
+.number-section-logo img {
+    width: 70%;
+}
+
+.number-section-para p {
+    margin: 0;
+    margin-top: 20px;
+    font-size: 21px;
+    font-family: 'montserrat-arabic';
+    text-align: center;
+    font-weight: 800;
+}
+
+.cities-heading{
+    font-size: 36px;
+    font-family: 'montserrat-arabic';
+    text-align: center;
+    font-weight: 800;
+}
+
+.cities-number{
+    font-size: 28px;
+    font-family: 'montserrat-arabic';
+    text-align: center;
+    font-weight: 800;
+    display: flex;
+    overflow: hidden;
+}
+
+
+.clients-heading{
+    font-size: 36px;
+    font-family: 'montserrat-arabic';
+    text-align: center;
+    font-weight: 800;
+}
+
+.clients-number{
+    font-size: 28px;
+    font-family: 'montserrat-arabic';
+    text-align: center;
+    font-weight: 800;
+    display: flex;
+}
+
+
+/* Initial state for animation */
+[data-animation-fadeup] {
+    opacity: 0; /* Start invisible */
+    transform: translateY(var(--animation-fadeup)); /* Apply the start position */
+    transition: transform var(--animation-duration) ease-out, opacity var(--animation-duration);
+}
+
+/* Animated state (when JavaScript adds a class) */
+.animated {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* End position (no translation) */
+}
+
+@keyframes dropIn {
+    0% {
+        visibility: visible;
+        transform: translateY(-100px); /* Start above */
+    }
+    50% {
+        transform: translateY(100px); /* Drop down */
+    }
+    80% {
+        visibility: visible;  /* Keep it visible during the animation */
+    }
+    100% {
+        transform: translateY(100px); /* Keep it dropped during iteration */
+    }
+}
+
+/* Final iteration - bring back to 0 position */
+@keyframes dropInFinal {
+    0% {
+        visibility: visible;
+        transform: translateY(-100px); /* Start above */
+    }
+    50% {
+        transform: translateY(100px); /* Drop down */
+    }
+    80% {
+        visibility: visible;
+    }
+    100% {
+        transform: translateY(0); /* Finally, return to the original position */
+    }
+}
+
+.number-char {
+    display: inline-block;
+    opacity: 1;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards; /* Ensure it stays in final position */
+}
+
+.number-char:nth-child(1) {
+    animation: dropIn 1s ease-in-out forwards;
+    animation-delay: 0s;
+    animation-iteration-count: 1; /* One iteration for first character */
+}
+
+.number-char:nth-child(2) {
+    animation: dropIn 1s ease-in-out forwards;
+    animation-delay: 0.5s;
+    animation-iteration-count: 2; /* Two iterations for second character */
+}
+
+.number-char:nth-child(3) {
+    animation: dropIn 1s ease-in-out forwards;
+    animation-delay: 1s;
+    animation-iteration-count: 3; /* Three iterations for third character */
+}
+
+.number-char:nth-child(4) {
+    animation: dropIn 1s ease-in-out forwards;
+    animation-delay: 1.5s;
+    animation-iteration-count: 4; /* Four iterations for fourth character */
+}
+
+.number-char:nth-child(5) {
+    animation: dropIn 1s ease-in-out forwards;
+    animation-delay: 2s;
+    animation-iteration-count: 5; /* Five iterations for fifth character */
+}
+
+.number-char:nth-child(6) {
+    animation: dropIn 1s ease-in-out forwards;
+    animation-delay: 2.5s;
+    animation-iteration-count: 6; /* Six iterations for sixth character */
+}
+
+.number-char:nth-child(7) {
+    animation: dropInFinal 1s ease-in-out forwards;
+    animation-delay: 3s;
+    animation-iteration-count: 1; /* Final iteration for seventh character */
+}
+
+/* 
+@keyframes dropIn {
+    0% {
+        visibility: visible;
+    }
+    50% {
+        transform: translateY(-100px);
+    }
+    80% {
+        visibility: hidden;
+    }
+    100% {
+        transform: translateY(100px);
+    }
+}
+
+
+.number-char {
+    display: inline-block;
+    animation: dropIn 100s ease-in-out forwards;
+}
+
+.number-char:nth-child(1) {
+    animation-iteration-count: 1;
+}
+
+.number-char:nth-child(2) {
+    animation-iteration-count: 2;
+}
+
+.number-char:nth-child(3) {
+    animation-iteration-count: 3;
+}
+.number-char:nth-child(4) {
+    animation-iteration-count: 4;
+}
+.number-char:nth-child(5) {
+    animation-iteration-count: 5;
+}
+.number-char:nth-child(6) {
+    animation-iteration-count: 6;
+}
+.number-char:nth-child(7) {
+    animation-iteration-count: 7;
+}
+
+.number-char {
+    transform: translateY(-100px);
+    animation-duration: 1s;
+} */
+
+
 
 @media only screen and (max-width : 400px) {
     .box-heading {
