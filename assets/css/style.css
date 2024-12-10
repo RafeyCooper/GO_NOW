@@ -461,7 +461,7 @@ nav {
     position: absolute;
     top: 92px;
     left: 24%;
-    transform: rotate(-5deg);
+    /* transform: rotate(-5deg); */
 }
 
 .element-1-box img {
