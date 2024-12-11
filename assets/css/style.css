@@ -1105,12 +1105,12 @@ footer {
 }
 
 .counting-heading {
-    font-size: 21px;
+    font-size: 31px;
     font-weight: 800;
 }
 
 .counting-number {
-    font-size: 18px;
+    font-size: 27px;
     position: relative;
     transition: transform 0.2s ease, opacity 0s ease;
     display: flex;
