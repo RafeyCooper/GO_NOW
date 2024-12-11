@@ -995,7 +995,7 @@ footer {
 .car-black {
     position: relative;
     z-index: 9;
-    left: -77px;
+    left: -19%;
 }
 
 .car-pink {
@@ -1015,21 +1015,21 @@ footer {
     position: absolute;
     z-index: 10;
     top: 0;
-    left: -169px;
+    left: -40%;
 }
 
 .pink-car-glow{
     position: absolute;
     z-index: 8;
     top: 0;
-    left: -18px;
+    left: -8%;
 }
 
 .white-car-glow{
     position: absolute;
     z-index: 6;
     top: 0;
-    left: 148px;
+    left: 35%;
 }
 
 .numbers-section{
