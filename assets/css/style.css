@@ -1094,7 +1094,7 @@ footer {
 }
 
 .cities, .captain, .clients {
-    width: 35%; /* Ensure all blocks have the same width */
+    width: 45%; /* Ensure all blocks have the same width */
     text-align: center; /* Centers content horizontally */
 }
 
