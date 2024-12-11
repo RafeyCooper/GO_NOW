@@ -119,7 +119,7 @@ window.addEventListener('scroll', checkScroll);
 
 function animateNumbersOnScroll() {
     // Select the elements you want to animate
-    const elements = document.querySelectorAll('#cities-number, #clients-number');
+    const elements = document.querySelectorAll('#cities-number, #clients-number, #captain-number, #employees-number, #ridescomplete-number, #fleetsize-number');
 
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
