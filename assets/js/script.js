@@ -117,77 +117,62 @@ window.addEventListener('scroll', checkScroll);
 
 
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     function animateNumbers() {
-//         const citiesNumberElement = document.getElementById('cities-number');
-//         const clientsNumberElement = document.getElementById('clients-number');
+function animateNumbersOnScroll() {
+    // Select the elements you want to animate
+    const elements = document.querySelectorAll('#cities-number, #clients-number');
 
-//         // Split the numbers into individual characters (for animation)
-//         splitAndAnimateNumber(citiesNumberElement);
-//         splitAndAnimateNumber(clientsNumberElement);
-//     }
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Trigger the animation when the element comes into view
+                const elementId = entry.target.id;
+                setTimeout(() => {
+                    animationNumber(`#${elementId}`);
+                }, 900);
+                
+                // Stop observing this element after the animation starts
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.5  // Adjust this value to trigger when the element is 50% in view
+    });
 
-//     function splitAndAnimateNumber(element) {
-//         const numberText = element.textContent.trim();
-//         element.innerHTML = ''; // Clear the existing content
+    // Observe each element
+    elements.forEach(element => {
+        observer.observe(element);
+    });
+}
 
-//         // Split number text into individual characters and wrap them in span
-//         numberText.split('').forEach((char, index) => {
-//             const span = document.createElement('span');
-//             span.classList.add('number-char');
-//             span.textContent = char;
+window.addEventListener('DOMContentLoaded', animateNumbersOnScroll);
 
-//             // Apply animation delay to each number character
-//             span.style.animationDelay = `${index * 0.5}s`;
+// The existing animationNumber function remains unchanged
+function animationNumber(elementId) {
+    const elements = $(elementId).children("span");
 
-//             element.appendChild(span);
-//         });
-//     }
-
-//     // Call the function to start the animation
-//     animateNumbers();
-// });
-
-
-const span = document.querySelector('.cities-number span');
-if (span) {
-    console.log("Element found, starting animation process.");
-
-    let iterationCount = 0;
-    const maxIterations = 4; // Number of times you want the dropIn animation to run
-    const dropInDuration = 5000; // Duration of the dropIn animation (in ms)
-
-    // Function to apply dropIn animation
-    function applyDropInAnimation() {
-        console.log("Applying dropIn animation...");
-        span.style.animation = 'dropIn 5s ease-in-out'; // Apply the dropIn animation
-    }
-
-    // Function to apply finalDropIn animation
-    function applyFinalDropInAnimation() {
-        console.log("Switching to finalDropIn animation.");
-        span.style.animation = 'finalDropIn 2s ease-in-out forwards'; // Apply final animation
-    }
-
-    // Run the animation cycle
-    function runAnimationCycle() {
-        if (iterationCount < maxIterations) {
-            applyDropInAnimation(); // Apply dropIn animation
-            iterationCount++;
-
-            // After the animation ends, reset and apply dropIn again
-            setTimeout(function() {
-                span.style.animation = ''; // Remove animation
-                runAnimationCycle(); // Run the animation again
-            }, dropInDuration); // After 5 seconds (duration of dropIn)
-        } else {
-            // After 4 iterations, switch to finalDropIn
-            applyFinalDropInAnimation();
+    function animateSingleElement(span, count) {
+        if (count <= 0) {
+            span.removeClass("hidden down").addClass("visible");
+            return;
         }
+
+        span.removeClass("hidden").addClass("down");
+
+        setTimeout(function() {
+            span.removeClass("down").addClass("hidden");
+
+            setTimeout(function() {
+                animateSingleElement(span, count - 1);
+            }, 80); // Time for the hiding phase
+
+        }, 80); // Time for the visible phase
     }
 
-    // Start the animation cycle
-    runAnimationCycle();
-} else {
-    console.log("Element not found.");
+    // Loop through each span element and animate with increasing count
+    elements.each(function(index, span) {
+        const repeatCount = index + 1; // First element animates 1 time, second 2 times, etc.
+        setTimeout(function() {
+            animateSingleElement($(span), repeatCount);
+        }, index * 40); // Delay each animation by 50ms per span
+    });
 }
