@@ -974,7 +974,7 @@ footer {
 }
 
 .car-section img {
-    width: 52%;
+    width: 66%;
 }
 
 .car-black,
@@ -995,50 +995,41 @@ footer {
 .car-black {
     position: relative;
     z-index: 9;
-    left: -19px;
+    left: -77px;
 }
 
 .car-pink {
     position: relative;
     z-index: 7;
-    margin-left: -37%;
-    width: 68% !important;
+    margin-left: -53%;
+    width: 75% !important;
 }
 
 .car-white {
     position: relative;
     z-index: 5;
-    margin-left: -22%;
+    margin-left: -27%;
 }
 
 .black-car-glow{
-    /* width: 100% !important; */
-    /* height: 100%; */
-    /* border: 1px solid; */
     position: absolute;
     z-index: 10;
     top: 0;
-    left: -100px;
+    left: -169px;
 }
 
 .pink-car-glow{
-    /* width: 100% !important; */
-    /* height: 100%; */
-    /* border: 1px solid; */
     position: absolute;
     z-index: 8;
     top: 0;
-    left: 19px;
+    left: -18px;
 }
 
 .white-car-glow{
-    /* width: 100% !important; */
-    /* height: 100%; */
-    /* border: 1px solid; */
     position: absolute;
     z-index: 6;
     top: 0;
-    left: 179px;
+    left: 148px;
 }
 
 .numbers-section{
