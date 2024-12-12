@@ -42,7 +42,8 @@
 
 body {
     font-family: 'montserrat-arabic';
-    background-color: #FAFAFA !important;
+    /* background-color: #FAFAFA !important; */
+    background-color: white !important;
 }
 
 
@@ -232,7 +233,8 @@ nav {
 }
 
 .main-download-section {
-    background-color: #fafafa;
+    /* background-color: #fafafa; */
+    background-color: white;
     padding-top: 10px;
     margin-top: 26px;
     padding-bottom: 10px;
@@ -712,7 +714,8 @@ nav {
 }
 
 .fourth-section-mobile {
-    background-color: #FAFAFA;
+    /* background-color: #FAFAFA; */
+    background-color: white;
     border-radius: 30px 30px 0px 0px;
     margin-top: -54px;
     position: relative;
