@@ -99,7 +99,15 @@ function checkToAnimateCars() {
 
 window.addEventListener('scroll', checkToAnimateCars);
 
-var alreadyAnimated = false;
+// Object to store the animation state for each element
+let animationFlags = {
+    citiesNumber: false,
+    clientsNumber: false,
+    captainNumber: false,
+    employeesNumber: false,
+    ridesCompleteNumber: false,
+    fleetSizeNumber: false
+};
 
 function animateNumbersOnScroll() {
     // Select the elements you want to animate
@@ -107,65 +115,63 @@ function animateNumbersOnScroll() {
 
     elements.forEach(element => {
         const rect = element.getBoundingClientRect();
+        const elementId = element.id;
 
         if (rect.top <= window.innerHeight && rect.top >= 0) {
-            animationNumber(element); // Pass the element directly, no need for '#' here
-            setTimeout(() => {
-                alreadyAnimated = true;
-            }, 500);
-            console.log(`${element.id} is at the top or moving towards the bottom!`);
+            if (!animationFlags[elementId]) {
+                animationNumber(element); // Pass the element directly, no need for '#' here
+                animationFlags[elementId] = true; // Mark the element as animated
+            }
+            console.log(`${elementId} is at the top or moving towards the bottom!`);
         } else if (rect.top < 0) {
-            
-            console.log(`${element.id} is above the viewport (top side)!`);
+            console.log(`${elementId} is above the viewport (top side)!`);
         } else if (rect.top > window.innerHeight) {
             // Using vanilla JS to find child spans
-            alreadyAnimated = false;
+            animationFlags[elementId] = false; // Reset the flag for the element
             const spans = element.querySelectorAll("span");
             spans.forEach(span => {
                 span.classList.remove("visible", "down");
                 span.classList.add("hidden");
             });
-            console.log(`${element.id} is below the viewport (bottom side)!`);
+            console.log(`${elementId} is below the viewport (bottom side)!`);
         }
     });
 }
 
-
-
 window.addEventListener('scroll', animateNumbersOnScroll);
 
 // The existing animationNumber function remains unchanged
-function animationNumber(elementId) {
-    console.log(alreadyAnimated)
-    if(!alreadyAnimated){
-        const elements = $(elementId).children("span");
+function animationNumber(element) {
+    const elementId = element.id;
+    console.log(animationFlags[elementId]);
 
-        function animateSingleElement(span, count) {
-            if (count <= 0) {
-                span.removeClass("hidden down").addClass("visible");
-                return;
-            }
-    
-            span.removeClass("hidden").addClass("down");
-    
-            setTimeout(function() {
-                span.removeClass("down").addClass("hidden");
-    
-                setTimeout(function() {
-                    animateSingleElement(span, count - 1);
-                }, 80); // Time for the hiding phase
-    
-            }, 80); // Time for the visible phase
+    const elements = $(element).children("span");
+
+    function animateSingleElement(span, count) {
+        if (count <= 0) {
+            span.removeClass("hidden down").addClass("visible");
+            return;
         }
-    
-        // Loop through each span element and animate with increasing count
-        elements.each(function(index, span) {
-            const repeatCount = index + 1; // First element animates 1 time, second 2 times, etc.
+
+        span.removeClass("hidden").addClass("down");
+
+        setTimeout(function() {
+            span.removeClass("down").addClass("hidden");
+
             setTimeout(function() {
-                animateSingleElement($(span), repeatCount);
-            }, index * 40); // Delay each animation by 50ms per span
-        });
+                animateSingleElement(span, count - 1);
+            }, 80); // Time for the hiding phase
+
+        }, 80); // Time for the visible phase
     }
+
+    // Loop through each span element and animate with increasing count
+    elements.each(function(index, span) {
+        const repeatCount = index + 1; // First element animates 1 time, second 2 times, etc.
+        setTimeout(function() {
+            animateSingleElement($(span), repeatCount);
+        }, index * 40); // Delay each animation by 50ms per span
+    });
 }
 
 
