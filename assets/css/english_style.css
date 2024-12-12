@@ -1123,6 +1123,17 @@ footer {
 }
 
 
+.IMG {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.IMG img {
+    width: 110px;
+    position: relative;
+}
+
 
 @media only screen and (max-width : 400px) {
     .box-heading {
