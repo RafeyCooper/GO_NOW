@@ -58,6 +58,7 @@ function animateCars() {
     const pinkCar = document.querySelector('.car-pink');
     const whiteCar = document.querySelector('.car-white');
 
+    // Add animation classes to cars with delays
     blackCar.classList.add('animated');
 
     setTimeout(() => {
@@ -69,28 +70,72 @@ function animateCars() {
     }, 200);
 }
 
+function resetCars() {
+    const blackCar = document.querySelector('.car-black');
+    const pinkCar = document.querySelector('.car-pink');
+    const whiteCar = document.querySelector('.car-white');
+
+    // Remove animation classes to reset cars for re-animation
+    blackCar.classList.remove('animated');
+    pinkCar.classList.remove('animated');
+    whiteCar.classList.remove('animated');
+}
+
+function observeCarsSection() {
+    const carsSection = document.querySelector('.car-section');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Trigger animation when cars section is in view
+                animateCars();
+            } else {
+                // Reset animations when cars section goes out of view
+                resetCars();
+            }
+        });
+    }, {
+        threshold: 0.5 // Trigger when 50% of the section is in view
+    });
+
+    // Observe the cars section
+    observer.observe(carsSection);
+}
+
+window.addEventListener('DOMContentLoaded', observeCarsSection);
+
+
+
+
+
 function animateOnScroll() {
     const elements = document.querySelectorAll('[data-animation-fadeup]');
 
-    const observer = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
+            const element = entry.target;
             if (entry.isIntersecting) {
-                const element = entry.target;
-
+                // Get animation properties from the element's data attributes
                 const start = element.getAttribute('data-animation-fadeup') || '0px';
                 const duration = element.getAttribute('data-animation-duration') || '1000ms';
                 const delay = element.getAttribute('data-animation-delay') || '0ms';
 
+                // Apply the custom CSS properties for the animation
                 element.style.setProperty('--animation-fadeup', start);
                 element.style.setProperty('--animation-duration', `${duration}ms`);
-                
+
+                // Trigger the animation after the specified delay
                 setTimeout(() => {
                     element.classList.add('animated');
-                }, delay);
+                }, parseInt(delay));  // Ensure delay is parsed as an integer
 
-                observer.unobserve(element);
+            } else {
+                // Reset the element to allow re-animation when it scrolls back into view
+                element.classList.remove('animated');
             }
         });
+    }, {
+        threshold: 0.5 // Adjust this to trigger the animation earlier or later
     });
 
     // Observe each element with the data-animation-fadeup attribute
@@ -102,36 +147,23 @@ function animateOnScroll() {
 window.addEventListener('DOMContentLoaded', animateOnScroll);
 
 
-function checkScroll() {
-    const carsSection = document.querySelector('.car-section');
-    const position = carsSection.getBoundingClientRect().top;
-    const screenPosition = window.innerHeight / 1.2;
-
-    if (position < screenPosition) {
-        animateCars();
-        window.removeEventListener('scroll', checkScroll);
-    }
-}
-
-window.addEventListener('scroll', checkScroll);
-
-
 
 function animateNumbersOnScroll() {
     // Select the elements you want to animate
     const elements = document.querySelectorAll('#cities-number, #clients-number, #captain-number, #employees-number, #ridescomplete-number, #fleetsize-number');
 
-    const observer = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Trigger the animation when the element comes into view
+                // Reset the spans' classes for re-animation
                 const elementId = entry.target.id;
+                const spans = $(`#${elementId}`).children("span");
+                spans.removeClass("visible down").addClass("hidden");
+
+                // Trigger the animation when the element comes into view
                 setTimeout(() => {
                     animationNumber(`#${elementId}`);
                 }, 900);
-                
-                // Stop observing this element after the animation starts
-                observer.unobserve(entry.target);
             }
         });
     }, {
