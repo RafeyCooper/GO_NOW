@@ -221,6 +221,7 @@ nav {
     margin-top: -20px;
     position: relative;
     z-index: 9;
+    background-color: white;
 }
 
 .heading h1 {
