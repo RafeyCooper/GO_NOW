@@ -42,8 +42,8 @@
 
 body {
     font-family: 'montserrat-arabic';
-     /* background-color: #FAFAFA !important; */
-     background-color: white !important;
+    /* background-color: #FAFAFA !important; */
+    background-color: white !important;
 }
 
 
@@ -1023,28 +1023,28 @@ footer {
     margin-left: -27%;
 }
 
-.black-car-glow{
+.black-car-glow {
     position: absolute;
     z-index: 10;
     top: 0;
     left: -40%;
 }
 
-.pink-car-glow{
+.pink-car-glow {
     position: absolute;
     z-index: 8;
     top: 0;
     left: -8%;
 }
 
-.white-car-glow{
+.white-car-glow {
     position: absolute;
     z-index: 6;
     top: 0;
     left: 35%;
 }
 
-.numbers-section{
+.numbers-section {
     overflow: hidden;
     padding-bottom: 30px;
 }
@@ -1069,19 +1069,27 @@ footer {
 
 .counting-section {
     display: flex;
-    justify-content: space-around; /* Adjusts spacing between elements */
-    align-items: center; /* Centers vertically */
+    justify-content: space-around;
+    /* Adjusts spacing between elements */
+    align-items: center;
+    /* Centers vertically */
 }
 
-.cities, .captain, .clients {
-    width: 45%; /* Ensure all blocks have the same width */
-    text-align: center; /* Centers content horizontally */
+.cities,
+.captain,
+.clients {
+    width: 45%;
+    /* Ensure all blocks have the same width */
+    text-align: center;
+    /* Centers content horizontally */
 }
 
-.counting-heading, .counting-number {
-    margin: 0 auto; /* Ensures content is centered within each column */
+.counting-heading,
+.counting-number {
+    margin: 0 auto;
+    /* Ensures content is centered within each column */
     font-family: 'montserrat-arabic';
-   
+
 }
 
 .counting-heading {
@@ -1133,6 +1141,7 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+
 .down {
     opacity: 1;
     transform: translateY(50px);
@@ -1166,13 +1175,18 @@ footer {
     font-family: 'montserrat-arabic';
     font-size: 20px;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white background */
-    backdrop-filter: blur(10px); /* Apply the blur effect behind the text */
-    position: absolute; /* Make the text overlap the image */
-    top: 50%; /* Position it at the bottom of the container */
+    background-color: rgba(255, 255, 255, 0.6);
+    /* Semi-transparent white background */
+    backdrop-filter: blur(10px);
+    /* Apply the blur effect behind the text */
+    position: absolute;
+    /* Make the text overlap the image */
+    top: 50%;
+    /* Position it at the bottom of the container */
     left: 0;
     right: 0;
-    z-index: 1; /* Ensure the text is above the image */
+    z-index: 1;
+    /* Ensure the text is above the image */
 }
 
 .IMG {
@@ -1186,6 +1200,95 @@ footer {
     position: relative;
 }
 
+.fifth-section h1 {
+    direction: rtl;
+    text-align: center;
+    font-family: 'montserrat-arabic';
+    font-weight: 800;
+    font-size: 38px;
+}
+
+.fifth-section p {
+    direction: rtl;
+    text-align: center;
+    font-family: 'montserrat-arabic';
+    font-weight: 800;
+    font-size: 14px;
+    color: #d9d9d9;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.security-tick {
+    width: 20px !important;
+    margin-right: 8px;
+}
+
+.fifth-section img {
+    width: 100%;
+}
+
+.first-line,
+.second-line {
+    text-align: center;
+}
+
+.first-line img {
+    width: 79%;
+    margin-top: 10px;
+}
+
+.second-line img {
+    width: 69%;
+    margin-top: 25px;
+}
+
+.horizontal-line-box {
+    display: flex;
+    justify-content: center;
+}
+
+.horizontal-line {
+    width: 80%;
+    height: 2px;
+    background-color: #f4f4f4;
+    margin: 70px 0px 35px 0px;
+}
+
+.fifth-heading-final-text {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.fifth-heading-final-text p {
+    direction: rtl;
+    font-family: 'montserrat-arabic';
+    font-weight: 800;
+    font-size: 14px;
+    color: black;
+}
+
+.copyright-symbol {
+    font-family: 'montserrat-arabic';
+    font-weight: 800;
+    font-size: 25px;
+    margin-top: -18px;
+
+}
+
+.fifth-section-contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 65px;
+}
+
+.fifth-section-contact-icons img {
+    width: 70px;
+}
 
 @media only screen and (max-width : 400px) {
     .box-heading {
