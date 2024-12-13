@@ -857,7 +857,7 @@ footer {
     padding: 20px;
     padding-bottom: 150px;
     background-color: #f4f4fe;
-    margin-top: 75px;
+    /* margin-top: 75px; */
 }
 
 .footer-text {
