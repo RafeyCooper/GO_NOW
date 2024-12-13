@@ -689,6 +689,14 @@ nav {
     right: -12px;
 }
 
+.company-section {
+    overflow: hidden;
+}
+
+.company-section img {
+    width: 100%;
+}
+
 .third-section {
     background-color: #5b60f6;
     position: relative;
