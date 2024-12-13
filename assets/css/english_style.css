@@ -652,6 +652,15 @@ nav {
     overflow: hidden;
 }
 
+.company-section h1 {
+    font-family: 'montserrat-arabic';
+    font-weight: 800;
+    font-size: 30px;
+    text-align: center;
+    margin: 35px 0px
+}
+
+
 .company-section img {
     width: 100%;
 }
@@ -1221,9 +1230,8 @@ footer {
 .copyright-symbol {
     font-family: 'montserrat-arabic';
     font-weight: 800;
-    font-size: 25px;
-    margin-top: -18px;
-
+    margin-top: -16px;
+    margin-left: 5px;
 }
 
 .fifth-section-contact-icons {

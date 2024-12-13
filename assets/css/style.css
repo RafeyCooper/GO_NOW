@@ -693,6 +693,15 @@ nav {
     overflow: hidden;
 }
 
+.company-section h1 {
+    direction: rtl;
+    font-family: 'montserrat-arabic';
+    font-weight: 800;
+    font-size: 38px;
+    text-align: center;
+    margin: 35px 0px
+}
+
 .company-section img {
     width: 100%;
 }
