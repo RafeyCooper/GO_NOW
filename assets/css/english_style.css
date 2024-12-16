@@ -639,6 +639,7 @@ nav {
     overflow: hidden;
     position: relative;
     margin-top: 20px;
+    padding-top: 20px;
     padding-bottom: 40px;
     margin-bottom: 20px;
     direction: ltr;
@@ -1333,6 +1334,39 @@ footer {
     width: 70px;
 }
 
+.car-slider-box {
+    position: relative;
+    box-shadow: 0px 0px 30px -7px #0000002e;
+    border-radius: 20px;
+}
+
+.car-slider-text {
+    text-align: center;
+    font-family: 'montserrat-arabic';
+    font-weight: 800;
+    font-size: 25px;
+    margin-top: -34px;
+}
+
+.car-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0px;
+}
+
+.car-img img {
+    width: 65%;
+}
+
+.current-icon {
+    position: absolute;
+    left: 21%;
+    top: 16%;
+    text-align: end;
+    width: 16% !important;
+}
 
 @media only screen and (max-width : 400px) {
     .box-heading {
