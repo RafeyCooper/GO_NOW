@@ -37,19 +37,21 @@ const swiper = new Swiper('.swiper-container', {
 
 $(document).ready(function () {
     $('.hamburger-icon-box').on('click', function () {
-        $('.sidebar-custom').addClass('show');
-        $('.overlay').addClass('show');
+        console.log("hmaburger clicked !")
+        $('.sidebar-custom').toggleClass('show');
+        // $('.overlay').addClass('show');
+        $('#nav-icon4').toggleClass('open');
     });
 
-    $('.close-btn').on('click', function () {
-        $('.sidebar-custom').removeClass('show');
-        $('.overlay').removeClass('show'); 
-    });
+    // $('.close-btn').on('click', function () {
+    //     $('.sidebar-custom').removeClass('show');
+    //     $('.overlay').removeClass('show'); 
+    // });
 
-    $('.overlay').on('click', function () {
-        $('.sidebar-custom').removeClass('show');
-        $(this).removeClass('show');
-    });
+    // $('.overlay').on('click', function () {
+    //     $('.sidebar-custom').removeClass('show');
+    //     $(this).removeClass('show');
+    // });
 });
 
 
