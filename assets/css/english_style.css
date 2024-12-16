@@ -1345,7 +1345,14 @@ footer {
     font-family: 'montserrat-arabic';
     font-weight: 800;
     font-size: 20px;
-    margin-top: -33px;
+    /* margin-top: -33px; */
+}
+
+.car-slider-para {
+    text-align: center;
+    font-family: 'montserrat-arabic';
+    font-weight: 600;
+    font-size: 12px;
 }
 
 .car-img {
@@ -1356,14 +1363,63 @@ footer {
     padding: 10px 0px;
 }
 
-.car-img img {
-    width: 65%;
+.slider-car-img-1 {
+    width: 50% !important;
 }
 
-.current-icon {
+.slider-car-img-2 {
+    width: 54% !important;
+}
+
+.slider-car-img-3 {
+    width: 50% !important;
+}
+
+.slider-car-img-4 {
+    width: 55% !important;
+}
+
+.slider-car-img-5 {
+    width: 50% !important;
+}
+
+.current-icon1 {
     position: absolute;
-    left: 20%;
-    top: 14%;
+    left: 22%;
+    top: 6%;
+    text-align: end;
+    width: 18% !important;
+}
+
+.current-icon2 {
+    position: absolute;
+    left: 19%;
+    top: 6%;
+    text-align: end;
+    width: 16% !important;
+}
+
+.current-icon3 {
+    position: absolute;
+    left: 18%;
+    top: 7%;
+    text-align: end;
+    width: 16% !important;
+}
+
+
+.current-icon4 {
+    position: absolute;
+    left: 18%;
+    top: 6%;
+    text-align: end;
+    width: 16% !important;
+}
+
+.current-icon5 {
+    position: absolute;
+    left: 22%;
+    top: 6%;
     text-align: end;
     width: 18% !important;
 }
