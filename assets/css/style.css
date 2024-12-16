@@ -1381,7 +1381,7 @@ footer {
     font-family: 'montserrat-arabic';
     font-weight: 800;
     font-size: 20px;
-    margin-top: -34px;
+    margin-top: -33px;
 }
 
 .car-img {
@@ -1393,15 +1393,15 @@ footer {
 }
 
 .car-img img {
-    width: 100%;
+    width: 65%;
 }
 
 .current-icon {
     position: absolute;
-    left: 11%;
-    top: 21%;
+    left: 20%;
+    top: 14%;
     text-align: end;
-    width: 20% !important;
+    width: 18% !important;
 }
 
 @media only screen and (max-width : 400px) {
