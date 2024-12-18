@@ -157,10 +157,10 @@ function animationNumber(element) {
 
         span.removeClass("hidden").addClass("down");
 
-        setTimeout(function() {
+        setTimeout(function () {
             span.removeClass("down").addClass("hidden");
 
-            setTimeout(function() {
+            setTimeout(function () {
                 animateSingleElement(span, count - 1);
             }, 80); // Time for the hiding phase
 
@@ -168,12 +168,34 @@ function animationNumber(element) {
     }
 
     // Loop through each span element and animate with increasing count
-    elements.each(function(index, span) {
+    elements.each(function (index, span) {
         const repeatCount = index + 1; // First element animates 1 time, second 2 times, etc.
-        setTimeout(function() {
+        setTimeout(function () {
             animateSingleElement($(span), repeatCount);
         }, index * 40); // Delay each animation by 50ms per span
     });
 }
 
 
+
+function detectPlatform() {
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    // Detect iOS
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        return 'iOS';
+    }
+
+    // Detect Android
+    if (/android/i.test(userAgent)) {
+        return 'Android';
+    }
+
+    return 'Other';
+}
+
+window.onload = function () {
+    var platform = detectPlatform();
+
+    console.log(platform);
+};
