@@ -1066,7 +1066,7 @@ footer {
 }
 
 .car-section img {
-    width: 66%;
+    width: 174%;
 }
 
 .car-black,
@@ -1084,44 +1084,48 @@ footer {
     opacity: 1;
 }
 
-.car-black {
+.first-car-3-cars-section-box {
     position: relative;
     z-index: 9;
-    left: -19%;
+    left: -26%;
 }
 
-.car-pink {
+.second-car-3-cars-section-box {
     position: relative;
     z-index: 7;
-    margin-left: -53%;
-    width: 75% !important;
+    left: -22%;
+    /* margin-left: -53%; */
 }
 
-.car-white {
+.third-car-3-cars-section-box {
     position: relative;
     z-index: 5;
-    margin-left: -27%;
+    left: -14%;
+    /* margin-left: -27%; */
 }
 
 .black-car-glow {
     position: absolute;
     z-index: 10;
-    top: 0;
-    left: -40%;
+    top: -66%;
+    left: -65%;
+    width: 100% !important;
 }
 
 .pink-car-glow {
     position: absolute;
     z-index: 8;
-    top: 0;
-    left: -8%;
+    top: -66%;
+    left: -33%;
+    width: 100% !important;
 }
 
 .white-car-glow {
     position: absolute;
     z-index: 6;
-    top: 0;
-    left: 35%;
+    top: -66%;
+    left: 10%;
+    width: 100% !important;
 }
 
 .numbers-section {
