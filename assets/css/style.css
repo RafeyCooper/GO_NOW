@@ -241,7 +241,7 @@ nav {
 .sidebar-custom.show {
     top: 100px;
     opacity: 1;
-    z-index: 1000;
+    z-index: 98;
 }
 
 /* Close button */
