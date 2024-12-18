@@ -197,6 +197,8 @@ function detectPlatform() {
 window.onload = function () {
     var platform = detectPlatform();
 
+    alert(platform);
+
     if (platform === 'iOS') {
         document.getElementById('download_top_button').onclick = function() {
             window.location.href = 'https://apps.apple.com/sa/app/%D9%84%D9%8A%D8%AA%D8%B3-%D9%82%D9%88-%D9%85%D8%B4%D9%88%D8%A7%D8%B1-%D8%A3%D9%88%D9%81%D8%B1-%D9%84%D9%83%D9%84-%D9%8A%D9%88%D9%85/id6477761982?l=ar';
