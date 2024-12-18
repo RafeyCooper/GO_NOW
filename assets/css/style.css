@@ -150,6 +150,13 @@ nav {
     z-index: -1;
 }
 
+.sidebar-custom ul {
+    list-style: none;
+    padding: 20px 35px;
+    margin: 0;
+}
+
+
 .sidebar-custom ul li {
     position: relative;
     padding: 10px 0px;
