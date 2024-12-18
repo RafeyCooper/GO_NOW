@@ -196,16 +196,31 @@ function detectPlatform() {
 
 window.onload = function () {
     var platform = detectPlatform();
-
-    alert(platform);
+    
+    var button1 = document.getElementById('download_button_one');
+    var button2 = document.getElementById('download_button_two');
 
     if (platform === 'iOS') {
-        document.getElementById('download_top_button').onclick = function() {
-            window.location.href = 'https://apps.apple.com/sa/app/%D9%84%D9%8A%D8%AA%D8%B3-%D9%82%D9%88-%D9%85%D8%B4%D9%88%D8%A7%D8%B1-%D8%A3%D9%88%D9%81%D8%B1-%D9%84%D9%83%D9%84-%D9%8A%D9%88%D9%85/id6477761982?l=ar';
-        };
+        if (button1) {
+            button1.onclick = function() {
+                window.location.href = 'https://apps.apple.com/sa/app/%D9%84%D9%8A%D8%AA%D8%B3-%D9%82%D9%88-%D9%85%D8%B4%D9%88%D8%A7%D8%B1-%D8%A3%D9%88%D9%81%D8%B1-%D9%84%D9%83%D9%84-%D9%8A%D9%88%D9%85/id6477761982?l=ar';
+            };
+        }
+        if (button2) {
+            button2.onclick = function() {
+                window.location.href = 'https://apps.apple.com/sa/app/%D9%84%D9%8A%D8%AA%D8%B3-%D9%82%D9%88-%D9%85%D8%B4%D9%88%D8%A7%D8%B1-%D8%A3%D9%88%D9%81%D8%B1-%D9%84%D9%83%D9%84-%D9%8A%D9%88%D9%85/id6477761982?l=ar';
+            };
+        }
     } else if (platform === 'Android') {
-        document.getElementById('download_top_button').onclick = function() {
-            window.location.href = 'https://play.google.com/store/apps/details?id=com.let_s_go.client&pcampaignid=web_share';
-        };
+        if (button1) {
+            button1.onclick = function() {
+                window.location.href = 'https://play.google.com/store/apps/details?id=com.let_s_go.client&pcampaignid=web_share';
+            };
+        }
+        if (button2) {
+            button2.onclick = function() {
+                window.location.href = 'https://play.google.com/store/apps/details?id=com.let_s_go.client&pcampaignid=web_share';
+            };
+        }
     }
 };
