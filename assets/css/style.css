@@ -189,7 +189,7 @@ nav {
     text-decoration: none;
     font-weight: 600;
     font-family: 'montserrat-arabic';
-    font-size: 19px;
+    font-size: 16px;
     z-index: 1; /* Ensure text appears above the background */
     /* transition: all 0.1s ease; */
 }
@@ -213,7 +213,7 @@ nav {
     direction: rtl;
     font-weight: 800;
     font-family: 'montserrat-arabic';
-    font-size: 28px;
+    font-size: 24px;
     color: #4f5afa;
 }
 
