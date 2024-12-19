@@ -1351,8 +1351,37 @@ footer {
     margin-bottom: 50px;
 }
 
+.fifth-heading-contact {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.fifth-heading-number {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+
 .fifth-heading-final-text p {
     direction: rtl;
+    font-family: 'montserrat-arabic';
+    font-weight: 800;
+    font-size: 14px;
+    color: black;
+}
+
+.fifth-heading-contact p {
+    direction: rtl;
+    font-family: 'montserrat-arabic';
+    font-weight: 800;
+    font-size: 14px;
+    color: black;
+}
+
+.fifth-heading-number p {
+    direction: ltr;
     font-family: 'montserrat-arabic';
     font-weight: 800;
     font-size: 14px;
