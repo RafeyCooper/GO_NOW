@@ -1496,6 +1496,28 @@ footer {
     width: 18% !important;
 }
 
+.overlay-button-box {
+    position: fixed;
+    bottom: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.overlay-button-box button {
+    direction: rtl;
+    border: none;
+    background-color: #4958fd;
+    padding: 11px 30px;
+    color: white;
+    font-size: 16px;
+    border-radius: 40px;
+    box-shadow: 0px 4px 7px -1px #4958fd;
+    font-family: 'montserrat-arabic';
+}
+
+
 @media only screen and (max-width : 400px) {
     .box-heading {
         font-size: 20px;
