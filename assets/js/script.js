@@ -199,6 +199,7 @@ window.onload = function () {
     
     var button1 = document.getElementById('download_button_one');
     var button2 = document.getElementById('download_button_two');
+    var button3 = document.getElementById('download_button_three');
 
     if (platform === 'iOS') {
         if (button1) {
@@ -208,6 +209,11 @@ window.onload = function () {
         }
         if (button2) {
             button2.onclick = function() {
+                window.location.href = 'https://apps.apple.com/sa/app/%D9%84%D9%8A%D8%AA%D8%B3-%D9%82%D9%88-%D9%85%D8%B4%D9%88%D8%A7%D8%B1-%D8%A3%D9%88%D9%81%D8%B1-%D9%84%D9%83%D9%84-%D9%8A%D9%88%D9%85/id6477761982?l=ar';
+            };
+        }
+        if (button3) {
+            button3.onclick = function() {
                 window.location.href = 'https://apps.apple.com/sa/app/%D9%84%D9%8A%D8%AA%D8%B3-%D9%82%D9%88-%D9%85%D8%B4%D9%88%D8%A7%D8%B1-%D8%A3%D9%88%D9%81%D8%B1-%D9%84%D9%83%D9%84-%D9%8A%D9%88%D9%85/id6477761982?l=ar';
             };
         }
@@ -222,5 +228,39 @@ window.onload = function () {
                 window.location.href = 'https://play.google.com/store/apps/details?id=com.let_s_go.client&pcampaignid=web_share';
             };
         }
+        if (button3) {
+            button3.onclick = function() {
+                window.location.href = 'https://play.google.com/store/apps/details?id=com.let_s_go.client&pcampaignid=web_share';
+            };
+        }
     }
 };
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const downloadButtons = document.getElementsByClassName('download_button_for_overlay');
+    const overlayButtonBox = document.getElementById('over_lay_button_box');
+
+    if (downloadButtons.length > 0 && overlayButtonBox) {
+        const downloadButton = downloadButtons[0];
+
+        const stickyNavbarHeight = 100; 
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    overlayButtonBox.style.transform = 'translateY(100px)';
+                } else {
+                    overlayButtonBox.style.transform = 'translateY(0px)';
+                }
+            });
+        }, {
+            root: null,
+            rootMargin: `-${stickyNavbarHeight}px 0px 0px 0px`
+        });
+
+        observer.observe(downloadButton);
+    } else {
+        console.error("Either the download button or the overlay button was not found.");
+    }
+});

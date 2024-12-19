@@ -1551,6 +1551,8 @@ footer {
     display: flex;
     justify-content: center;
     z-index: 9999;
+    transition: all ease 0.3s;
+    transform: translateY(100px);
 }
 
 .overlay-button-box button {
