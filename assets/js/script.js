@@ -89,12 +89,12 @@ function checkToAnimateCars() {
 
         if (rect.top <= window.innerHeight && rect.top >= 0) {
             animateCars()
-            console.log(`${element.id} is at the top or moving towards the bottom!`);
+            // console.log(`${element.id} is at the top or moving towards the bottom!`);
         } else if (rect.top < 0) {
-            console.log(`${element.id} is above the viewport (top side)!`);
+            // console.log(`${element.id} is above the viewport (top side)!`);
         } else if (rect.top > window.innerHeight) {
             resetCars()
-            console.log(`${element.id} is below the viewport (bottom side)!`);
+            // console.log(`${element.id} is below the viewport (bottom side)!`);
         }
     });
 }
@@ -124,9 +124,9 @@ function animateNumbersOnScroll() {
                 animationNumber(element); // Pass the element directly, no need for '#' here
                 animationFlags[elementId] = true; // Mark the element as animated
             }
-            console.log(`${elementId} is at the top or moving towards the bottom!`);
+            // console.log(`${elementId} is at the top or moving towards the bottom!`);
         } else if (rect.top < 0) {
-            console.log(`${elementId} is above the viewport (top side)!`);
+            // console.log(`${elementId} is above the viewport (top side)!`);
         } else if (rect.top > window.innerHeight) {
             // Using vanilla JS to find child spans
             animationFlags[elementId] = false; // Reset the flag for the element
@@ -135,7 +135,7 @@ function animateNumbersOnScroll() {
                 span.classList.remove("visible", "down");
                 span.classList.add("hidden");
             });
-            console.log(`${elementId} is below the viewport (bottom side)!`);
+            // console.log(`${elementId} is below the viewport (bottom side)!`);
         }
     });
 }
@@ -274,7 +274,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const downloadSection = document.querySelector('.main-top-section');
 
     if (downloadButton && overlayButtonBox && downloadSection) {
-        const stickyNavbarHeight = 100; // Adjust as per your navbar height
+        const stickyNavbarHeight = 0; // Adjust as per your navbar height
 
         const buttonObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
