@@ -350,22 +350,26 @@ document.addEventListener("DOMContentLoaded", function () {
         // Function to detect Safari browser
         const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
+        console.log(isSafari)
+
         const checkViewport = () => {
             console.log("checking button");
             const buttonRect = downloadButton.getBoundingClientRect();
             const sectionRect = downloadSection.getBoundingClientRect();
 
             let translateYValue = '100px'; // Default value
+            let resetTranslateValue = '0px';
 
             // If Safari, increase the translation value
             if (isSafari) {
-                translateYValue = '200px'; // Adjust as needed for Safari
+                translateYValue = '150px'; // Adjust as needed for Safari
+                resetTranslateValue = '-100px';
             }
 
             if (buttonRect.bottom < stickyNavbarHeight || buttonRect.top > window.innerHeight) {
                 // Button is out of view, show overlay if section is still in view
                 if (sectionRect.top < window.innerHeight && sectionRect.bottom > stickyNavbarHeight) {
-                    overlayButtonBox.style.transform = `translateY(0px)`;
+                    overlayButtonBox.style.transform = `translateY(${resetTranslateValue})`;
                 } else {
                     overlayButtonBox.style.transform = `translateY(${translateYValue})`;
                 }
