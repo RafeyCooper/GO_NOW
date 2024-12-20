@@ -345,23 +345,33 @@ document.addEventListener("DOMContentLoaded", function () {
     const downloadSection = document.querySelector('.main-top-section');
 
     if (downloadButton && overlayButtonBox && downloadSection) {
-        const stickyNavbarHeight = 0; // Adjust as per your navbar height
+        const stickyNavbarHeight = 0;
+
+        // Function to detect Safari browser
+        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
         const checkViewport = () => {
-            console.log("checking button")
+            console.log("checking button");
             const buttonRect = downloadButton.getBoundingClientRect();
             const sectionRect = downloadSection.getBoundingClientRect();
+
+            let translateYValue = '100px'; // Default value
+
+            // If Safari, increase the translation value
+            if (isSafari) {
+                translateYValue = '200px'; // Adjust as needed for Safari
+            }
 
             if (buttonRect.bottom < stickyNavbarHeight || buttonRect.top > window.innerHeight) {
                 // Button is out of view, show overlay if section is still in view
                 if (sectionRect.top < window.innerHeight && sectionRect.bottom > stickyNavbarHeight) {
-                    overlayButtonBox.style.transform = 'translateY(0px)';
+                    overlayButtonBox.style.transform = `translateY(0px)`;
                 } else {
-                    overlayButtonBox.style.transform = 'translateY(100px)';
+                    overlayButtonBox.style.transform = `translateY(${translateYValue})`;
                 }
             } else {
                 // Button is in view, hide overlay
-                overlayButtonBox.style.transform = 'translateY(100px)';
+                overlayButtonBox.style.transform = `translateY(${translateYValue})`;
             }
         };
 

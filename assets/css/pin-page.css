@@ -42,9 +42,15 @@
 
 body {
     background-color: #fafbfd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-.otp-heading h1 {
+.main-section {}
+
+.pin-heading h1 {
     font-family: 'montserrat-arabic';
     direction: rtl;
     font-weight: 800;
@@ -53,39 +59,64 @@ body {
     margin-top: 20px;
 }
 
-.otp-para {
+.pin-boxes {
     display: flex;
-    justify-content: center;
-    gap: 5px;
-    font-size: 14px;
-    font-weight: 800;
-}
-
-.otp-para a{
-    color: #b8b8b8;
-    font-family: 'montserrat-arabic';
-    direction: rtl;
-}
-.otp-para p {
-    color: #b8b8b8;
-    font-family: 'montserrat-arabic';
-    direction: rtl;
-}
-
-.otp-boxes {
-    display: flex;
-    justify-content: center;
     gap: 10px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 50px;
+    justify-content: center;
 }
 
-.otp-box {
+.pin-box {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #4a5bff;
+    border-radius: 16px;
+}
+
+
+.pin-box.filled {
+    background-color: #4a5bff; /* Light green when filled */
+}
+
+.pin-box.empty {
+    background-color: #ffffff; /* White for empty boxes */
+}
+
+
+.keypad {
+    display: flex;
+    flex-direction: column;
+    width: 288px;
+    margin-top: 50px;
+}
+
+.keypad-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.keypad-num {
     width: 50px;
     height: 50px;
-    text-align: center;
-    font-size: 24px;
-    border-radius: 5px;
-    background-color: white;
-    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 35px;
+    cursor: pointer;
+    font-family: 'montserrat-arabic';
+    font-weight: 800;
+    color: #4a5bff;
+    border-radius: 50px;
+    transition: background-color 0.3s;
+}
+
+
+.keypad-num.empty {
+    visibility: hidden;
+}
+
+.keypad-num.remove {
+    font-size: 40px;
 }

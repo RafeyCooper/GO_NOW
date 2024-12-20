@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/otp-page.css">
 </head>
 <body>
     <div class="otp-heading">
         <h1>أدخل رقم التحقق</h1>
+    </div>
+
+    <div class="otp-boxes">
+        <input type="text" class="otp-box" maxlength="1" id="otp1">
+        <input type="text" class="otp-box" maxlength="1" id="otp2">
+        <input type="text" class="otp-box" maxlength="1" id="otp3">
+        <input type="text" class="otp-box" maxlength="1" id="otp4">
     </div>
 
     <div class="otp-para">
@@ -15,3 +23,35 @@
     </div>
 </body>
 </html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const otpInputs = document.querySelectorAll('.otp-box');
+
+    otpInputs.forEach((input, index) => {
+        input.addEventListener('input', function () {
+            // Move to the next input if a number is entered
+            if (input.value.length === 1 && index < otpInputs.length - 1) {
+                otpInputs[index + 1].focus();
+            }
+        });
+
+        input.addEventListener('keydown', function (event) {
+            // Move to the previous input if backspace is pressed and input is empty
+            if (event.key === "Backspace" && input.value === '' && index > 0) {
+                otpInputs[index - 1].focus();
+            }
+        });
+    });
+
+    // Collect OTP when needed
+    function getOtp() {
+        let otpValue = '';
+        otpInputs.forEach(input => {
+            otpValue += input.value;
+        });
+        return otpValue;
+    }
+});
+
+</script>
