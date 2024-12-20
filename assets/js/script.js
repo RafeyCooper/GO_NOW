@@ -358,12 +358,12 @@ document.addEventListener("DOMContentLoaded", function () {
             const sectionRect = downloadSection.getBoundingClientRect();
 
             let translateYValue = '100px'; // Default value
-            let resetTranslateValue = '0px';
+            let resetTranslateValue = '50px';
 
             // If Safari, increase the translation value
             if (isSafari) {
                 translateYValue = '150px'; // Adjust as needed for Safari
-                resetTranslateValue = '0px';
+                resetTranslateValue = '50px';
             }
 
             if (buttonRect.bottom < stickyNavbarHeight || buttonRect.top > window.innerHeight) {
