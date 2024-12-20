@@ -363,7 +363,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // If Safari, increase the translation value
             if (isSafari) {
                 translateYValue = '150px'; // Adjust as needed for Safari
-                resetTranslateValue = '-10vh';
+                resetTranslateValue = '-5vh';
             }
 
             if (buttonRect.bottom < stickyNavbarHeight || buttonRect.top > window.innerHeight) {
