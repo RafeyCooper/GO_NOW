@@ -237,30 +237,99 @@ window.onload = function () {
 };
 
 
+// document.addEventListener("DOMContentLoaded", function () {
+//     const downloadButtons = document.getElementsByClassName('download_button_for_overlay');
+//     const overlayButtonBox = document.getElementById('over_lay_button_box');
+
+//     if (downloadButtons.length > 0 && overlayButtonBox) {
+//         const downloadButton = downloadButtons[0];
+
+//         const stickyNavbarHeight = 100; 
+
+//         const observer = new IntersectionObserver((entries) => {
+//             entries.forEach(entry => {
+//                 if (entry.isIntersecting) {
+//                     overlayButtonBox.style.transform = 'translateY(100px)';
+//                 } else {
+//                     overlayButtonBox.style.transform = 'translateY(0px)';
+//                 }
+//             });
+//         }, {
+//             root: null,
+//             rootMargin: `-${stickyNavbarHeight}px 0px 0px 0px`
+//         });
+
+//         observer.observe(downloadButton);
+//     } else {
+//         console.error("Either the download button or the overlay button was not found.");
+//     }
+// });
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
-    const downloadButtons = document.getElementsByClassName('download_button_for_overlay');
+    const downloadButton = document.getElementById('download_button_one');
     const overlayButtonBox = document.getElementById('over_lay_button_box');
+    const downloadSection = document.querySelector('.main-top-section');
 
-    if (downloadButtons.length > 0 && overlayButtonBox) {
-        const downloadButton = downloadButtons[0];
+    if (downloadButton && overlayButtonBox && downloadSection) {
+        const stickyNavbarHeight = 100; // Adjust as per your navbar height
 
-        const stickyNavbarHeight = 100; 
-
-        const observer = new IntersectionObserver((entries) => {
+        const buttonObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
+                    // Main download button is in view, hide the overlay button
                     overlayButtonBox.style.transform = 'translateY(100px)';
                 } else {
-                    overlayButtonBox.style.transform = 'translateY(0px)';
+                    // Main download button is out of view, show the overlay button if section is in view
+                    checkSectionInView();
                 }
             });
         }, {
             root: null,
-            rootMargin: `-${stickyNavbarHeight}px 0px 0px 0px`
+            threshold: 0
         });
 
-        observer.observe(downloadButton);
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Section is in view, check if button is out of view
+                    checkButtonOutOfView();
+                } else {
+                    // Section is out of view, hide the overlay button
+                    overlayButtonBox.style.transform = 'translateY(100px)';
+                }
+            });
+        }, {
+            root: null,
+            rootMargin: `-${stickyNavbarHeight}px 0px 0px 0px`,
+            threshold: 0
+        });
+
+        const checkButtonOutOfView = () => {
+            const buttonRect = downloadButton.getBoundingClientRect();
+            if (buttonRect.bottom < stickyNavbarHeight || buttonRect.top > window.innerHeight) {
+                // Button is out of view, show overlay if section is still in view
+                overlayButtonBox.style.transform = 'translateY(0px)';
+            } else {
+                overlayButtonBox.style.transform = 'translateY(100px)';
+            }
+        };
+
+        const checkSectionInView = () => {
+            const sectionRect = downloadSection.getBoundingClientRect();
+            if (sectionRect.top < window.innerHeight && sectionRect.bottom > stickyNavbarHeight) {
+                // Section is in view, check if button is out of view
+                checkButtonOutOfView();
+            } else {
+                overlayButtonBox.style.transform = 'translateY(100px)';
+            }
+        };
+
+        buttonObserver.observe(downloadButton);
+        sectionObserver.observe(downloadSection);
     } else {
-        console.error("Either the download button or the overlay button was not found.");
+        console.error("Required elements not found.");
     }
 });
