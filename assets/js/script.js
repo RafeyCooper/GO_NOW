@@ -196,41 +196,87 @@ function detectPlatform() {
 
 window.onload = function () {
     var platform = detectPlatform();
-    
+
     var button1 = document.getElementById('download_button_one');
     var button2 = document.getElementById('download_button_two');
     var button3 = document.getElementById('download_button_three');
+    var captain_button_1 = document.getElementById('captain_download_button_one');
+    var captain_button_2 = document.getElementById('captain_download_button_three');
+    var home_captain_button = document.getElementById('home_captain_button');
 
     if (platform === 'iOS') {
         if (button1) {
-            button1.onclick = function() {
+            button1.onclick = function () {
                 window.location.href = 'https://apps.apple.com/sa/app/%D9%84%D9%8A%D8%AA%D8%B3-%D9%82%D9%88-%D9%85%D8%B4%D9%88%D8%A7%D8%B1-%D8%A3%D9%88%D9%81%D8%B1-%D9%84%D9%83%D9%84-%D9%8A%D9%88%D9%85/id6477761982?l=ar';
             };
         }
         if (button2) {
-            button2.onclick = function() {
+            button2.onclick = function () {
                 window.location.href = 'https://apps.apple.com/sa/app/%D9%84%D9%8A%D8%AA%D8%B3-%D9%82%D9%88-%D9%85%D8%B4%D9%88%D8%A7%D8%B1-%D8%A3%D9%88%D9%81%D8%B1-%D9%84%D9%83%D9%84-%D9%8A%D9%88%D9%85/id6477761982?l=ar';
             };
         }
         if (button3) {
-            button3.onclick = function() {
+            button3.onclick = function () {
                 window.location.href = 'https://apps.apple.com/sa/app/%D9%84%D9%8A%D8%AA%D8%B3-%D9%82%D9%88-%D9%85%D8%B4%D9%88%D8%A7%D8%B1-%D8%A3%D9%88%D9%81%D8%B1-%D9%84%D9%83%D9%84-%D9%8A%D9%88%D9%85/id6477761982?l=ar';
             };
         }
+
+        // Captain Links
+
+        if (captain_button_1) {
+            captain_button_1.onclick = function () {
+                window.location.href = 'https://apps.apple.com/sa/app/go-now-captain/id6477761421?l=ar';
+            };
+        }
+
+        if (captain_button_2) {
+            captain_button_2.onclick = function () {
+                window.location.href = 'https://apps.apple.com/sa/app/go-now-captain/id6477761421?l=ar';
+            };
+        }
+
+        if (home_captain_button) {
+            home_captain_button.onclick = function () {
+                window.location.href = 'https://apps.apple.com/sa/app/go-now-captain/id6477761421?l=ar';
+            };
+        }
+
+
+
+
     } else if (platform === 'Android') {
         if (button1) {
-            button1.onclick = function() {
+            button1.onclick = function () {
                 window.location.href = 'https://play.google.com/store/apps/details?id=com.let_s_go.client&pcampaignid=web_share';
             };
         }
         if (button2) {
-            button2.onclick = function() {
+            button2.onclick = function () {
                 window.location.href = 'https://play.google.com/store/apps/details?id=com.let_s_go.client&pcampaignid=web_share';
             };
         }
         if (button3) {
-            button3.onclick = function() {
+            button3.onclick = function () {
                 window.location.href = 'https://play.google.com/store/apps/details?id=com.let_s_go.client&pcampaignid=web_share';
+            };
+        }
+
+        // Captain Links
+
+        if (captain_button_1) {
+            captain_button_1.onclick = function () {
+                window.location.href = 'https://play.google.com/store/apps/details?id=com.let_s_go.captain&pcampaignid=web_share';
+            };
+        }
+
+        if (captain_button_2) {
+            captain_button_2.onclick = function () {
+                window.location.href = 'https://play.google.com/store/apps/details?id=com.let_s_go.captain&pcampaignid=web_share';
+            };
+        }
+        if (home_captain_button) {
+            home_captain_button.onclick = function () {
+                window.location.href = 'https://play.google.com/store/apps/details?id=com.let_s_go.captain&pcampaignid=web_share';
             };
         }
     }
@@ -244,7 +290,7 @@ window.onload = function () {
 //     if (downloadButtons.length > 0 && overlayButtonBox) {
 //         const downloadButton = downloadButtons[0];
 
-//         const stickyNavbarHeight = 100; 
+//         const stickyNavbarHeight = 100;
 
 //         const observer = new IntersectionObserver((entries) => {
 //             entries.forEach(entry => {
