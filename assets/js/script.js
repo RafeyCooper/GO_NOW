@@ -202,7 +202,9 @@ window.onload = function () {
     var button3 = document.getElementById('download_button_three');
     var captain_button_1 = document.getElementById('captain_download_button_one');
     var captain_button_2 = document.getElementById('captain_download_button_three');
+    var captain_button_captain = document.getElementById('captain_button_captain');
     var home_captain_button = document.getElementById('home_captain_button');
+    var home_captain_button_2 = document.getElementById('home_captain_button_2');
 
     if (platform === 'iOS') {
         if (button1) {
@@ -240,8 +242,16 @@ window.onload = function () {
                 window.location.href = 'https://apps.apple.com/sa/app/go-now-captain/id6477761421?l=ar';
             };
         }
-
-
+        if (home_captain_button_2) {
+            home_captain_button_2.onclick = function () {
+                window.location.href = 'https://apps.apple.com/sa/app/go-now-captain/id6477761421?l=ar';
+            };
+        }
+        if (captain_button_captain) {
+            captain_button_captain.onclick = function () {
+                window.location.href = 'https://apps.apple.com/sa/app/go-now-captain/id6477761421?l=ar';
+            };
+        }
 
 
     } else if (platform === 'Android') {
@@ -276,6 +286,16 @@ window.onload = function () {
         }
         if (home_captain_button) {
             home_captain_button.onclick = function () {
+                window.location.href = 'https://play.google.com/store/apps/details?id=com.let_s_go.captain&pcampaignid=web_share';
+            };
+        }
+        if (home_captain_button_2) {
+            home_captain_button_2.onclick = function () {
+                window.location.href = 'https://play.google.com/store/apps/details?id=com.let_s_go.captain&pcampaignid=web_share';
+            };
+        }
+        if (captain_button_captain) {
+            captain_button_captain.onclick = function () {
                 window.location.href = 'https://play.google.com/store/apps/details?id=com.let_s_go.captain&pcampaignid=web_share';
             };
         }
