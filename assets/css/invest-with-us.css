@@ -603,15 +603,15 @@ nav {
 
 .cloud-box-4{
     position: absolute;
-    top: 400px;
-    z-index: 8;
+    top: 396px;
+    z-index: 10;
     overflow: hidden;
-    opacity: 1;
+    opacity: 0.5;
 }
 
 .cloud-box-4 img{
     width: 100%;
-    margin-left: 0px;
+    margin-left: -94px;
 }
 
 .cloud-box-5{
