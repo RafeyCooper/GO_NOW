@@ -563,10 +563,10 @@ nav {
 .cloud-box{
     /* border: 1px solid black; */
     position: absolute;
-    top: 369px;
+    top: 397px;
     z-index: 10;
     overflow: hidden;
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
 .cloud-box img{
@@ -577,7 +577,7 @@ nav {
 
 .cloud-box-2{
     position: absolute;
-    top: 359px;
+    top: 340px;
     z-index: 10;
     overflow: hidden;
     opacity: 0.7;
