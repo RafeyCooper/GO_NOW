@@ -660,3 +660,77 @@ nav {
     border-radius: 20px;
 }
 
+.content-2 {
+    padding: 30px 43px;
+}
+
+.content-2-heading-1 {
+    font-size: 24px;
+    margin: 0;
+    background: transparent;
+    font-family: 'montserrat-arabic';
+    font-weight: 800;
+    direction: rtl;
+    color: #4f5afa;
+}
+
+.content-2-heading-2 {
+    font-size: 24px;
+    margin: 0;
+    background: transparent;
+    font-family: 'montserrat-arabic';
+    font-weight: 800;
+    color: black;
+    direction: rtl;
+    margin-top: 20px;
+}
+
+.content-2-heading-3 {
+    font-size: 24px;
+    margin: 0;
+    background: transparent;
+    font-family: 'montserrat-arabic';
+    font-weight: 800;
+    direction: rtl;
+    color: #4f5afa;
+    margin-top: 5px;
+}
+
+.invest-card {
+    padding: 0px 30px;
+    margin-top: 70px;
+}
+
+.icon-img-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-img-box img {
+    width: 60px;
+}
+
+.invest-heading{
+    font-size: 24px;
+    margin: 0;
+    background: transparent;
+    font-family: 'montserrat-arabic';
+    font-weight: 800;
+    direction: rtl;
+    margin-top: 5px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.invest-content{
+    font-size: 18px;
+    margin: 0;
+    background: transparent;
+    font-family: 'montserrat-arabic';
+    font-weight: 600;
+    direction: rtl;
+    margin-top: 5px;
+    text-align: center;
+    margin-top: 20px;
+}
