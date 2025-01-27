@@ -619,7 +619,7 @@ nav {
     top: 400px;
     z-index: 8;
     overflow: hidden;
-    opacity: 0.6;
+    opacity: 1;
 }
 
 .cloud-box-5 img{
