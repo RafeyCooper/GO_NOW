@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/invest-with-us.css?ver=2.0">
+    <link rel="stylesheet" href="./assets/css/invest-with-us.css?ver=2.1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -13,6 +13,29 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
+<style>
+    .swiper-pagination {
+        position: absolute !important;
+        bottom: 0 !important;
+        text-align: center !important;
+    }
+
+    .swiper-pagination-bullet {
+        display: inline-block;
+        width: 30px;
+        height: 5px;
+        background-color: #a4a6ff;
+        border-radius: 20px;
+        margin: 0 5px;
+        transition: all 0.3s ease;
+    }
+
+    .swiper-pagination-bullet-active {
+        width: 70px;
+        height: 5px;
+        background-color: #5b60f6;
+    }
+</style>
 
 <body>
 
@@ -176,10 +199,14 @@
 
             <div class="emoji_main_box">
                 <div class="emojis_box">
-                    <img src="./assets/img/fire.png" alt="" class="cool_emoji animate__animated animate__fadeInBottomLeft">
-                    <img src="./assets/img/rocket.png" alt="" class="rocket_emoji animate__animated animate__fadeInTopLeft">
-                    <img src="./assets/img/bag.png" alt="" class="bag_emoji animate__animated animate__fadeInBottomRight">
-                    <img src="./assets/img/security_emoji.png" alt="" class="securtiy_emoji animate__animated animate__fadeInTopRight">
+                    <img src="./assets/img/fire.png" alt=""
+                        class="cool_emoji animate__animated animate__fadeInBottomLeft">
+                    <img src="./assets/img/rocket.png" alt=""
+                        class="rocket_emoji animate__animated animate__fadeInTopLeft">
+                    <img src="./assets/img/bag.png" alt=""
+                        class="bag_emoji animate__animated animate__fadeInBottomRight">
+                    <img src="./assets/img/security_emoji.png" alt=""
+                        class="securtiy_emoji animate__animated animate__fadeInTopRight">
                     <!-- <img src="" alt=""> -->
                 </div>
             </div>
@@ -193,15 +220,30 @@
                 <button>تقدّم بطلبك الآن!</button>
             </div>
 
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./assets/img/place-holder.webp" alt="Image 1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./assets/img/place-holder.webp" alt="Image 2">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./assets/img/place-holder.webp" alt="Image 2">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
             <!-- <div class="first-button-img-box animate__animated delay_0-6 animate__fadeInLeft animate__delay-1s">
                 <img src="./assets/img/button.png" alt="">
             </div> -->
 
-            <div class="d-flex justify-content-center animate__animated delay_0-6 animate__fadeInLeft animate__delay-1s">
+            <div class="d-flex justify-content-center animate__animated delay_0-6 animate__fadeInLeft animate__delay-1s p-5">
                 <p class="first-section-subpara">التطبيق الأسرع نمواً في المملكة!</p>
             </div>
 
-            
+
         </div>
     </div>
 

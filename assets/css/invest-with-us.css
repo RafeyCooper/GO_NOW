@@ -368,11 +368,11 @@ nav {
     display: block;
 } */
 
-.animate__fadeInUp{
+.animate__fadeInUp {
     --animate-delay: 0.6s;
 }
 
-.delay_0-6.animate__fadeInLeft{
+.delay_0-6.animate__fadeInLeft {
     --animate-delay: 0.6s;
 }
 
@@ -536,7 +536,7 @@ nav {
     text-align: center;
     color: #000000;
     /* margin-top: 23px; */
-    width: 300px;
+    /* width: 300px; */
 }
 
 .first-section-button-box {
@@ -546,7 +546,7 @@ nav {
     padding: 30px 0px;
     margin-top: 20px;
     position: relative;
-    z-index: 99;
+    z-index: 9;
 }
 
 .first-section-button-box button {
@@ -563,7 +563,7 @@ nav {
 }
 
 
-.cloud-box{
+.cloud-box {
     /* border: 1px solid black; */
     position: absolute;
     top: 397px;
@@ -572,13 +572,13 @@ nav {
     opacity: 0.8;
 }
 
-.cloud-box img{
+.cloud-box img {
     width: 100%;
     margin-left: -170px;
 }
 
 
-.cloud-box-2{
+.cloud-box-2 {
     position: absolute;
     top: 340px;
     z-index: 10;
@@ -586,12 +586,12 @@ nav {
     opacity: 0.7;
 }
 
-.cloud-box-2 img{
+.cloud-box-2 img {
     width: 100%;
     margin-left: -67px;
 }
 
-.cloud-box-3{
+.cloud-box-3 {
     position: absolute;
     top: 300px;
     z-index: 8;
@@ -599,12 +599,12 @@ nav {
     opacity: 1;
 }
 
-.cloud-box-3 img{
+.cloud-box-3 img {
     width: 100%;
     margin-left: 119px;
 }
 
-.cloud-box-4{
+.cloud-box-4 {
     position: absolute;
     top: 396px;
     z-index: 10;
@@ -612,12 +612,12 @@ nav {
     opacity: 0.5;
 }
 
-.cloud-box-4 img{
+.cloud-box-4 img {
     width: 100%;
     margin-left: -94px;
 }
 
-.cloud-box-5{
+.cloud-box-5 {
     position: absolute;
     top: 443px;
     z-index: 8;
@@ -625,7 +625,38 @@ nav {
     opacity: 0.8;
 }
 
-.cloud-box-5 img{
+.cloud-box-5 img {
     width: 100%;
     margin-left: -36px;
 }
+
+.swiper-container {
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+    direction: rtl;
+}
+
+.swiper-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.swiper-slide {
+    height: 200px;
+    position: relative;
+    border-radius: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.swiper-slide img {
+    width: 100%;
+    border-radius: 20px;
+}
+
