@@ -369,7 +369,7 @@ nav {
 } */
 
 .first-section {
-    margin-top: 150px;
+    /* padding-top: 150px; */
     overflow: hidden;
 }
 
@@ -379,6 +379,7 @@ nav {
     align-items: center;
     position: relative;
     z-index: 9;
+    padding-top: 150px;
 }
 
 .empty_phone_img_box_wrap {
@@ -405,7 +406,7 @@ nav {
 
 .wave_img_box {
     position: absolute;
-    top: 20px;
+    top: 168px;
     z-index: -1;
 }
 
@@ -415,7 +416,7 @@ nav {
 
 .increase_arrow_img_box {
     position: absolute;
-    top: 100px;
+    top: 235px;
     left: -10px;
     z-index: -1;
 }
@@ -442,7 +443,7 @@ nav {
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 0;
+    top: 150px;
     left: 0;
     z-index: 11;
     width: 100%;
@@ -527,6 +528,7 @@ nav {
     text-align: center;
     color: #000000;
     margin-top: 23px;
+    width: 300px;
 }
 
 .first-section-button-box {
