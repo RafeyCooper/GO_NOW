@@ -734,3 +734,118 @@ nav {
     text-align: center;
     margin-top: 20px;
 }
+
+.content-3 {
+    padding: 30px 20px;
+}
+
+.content-3-heading-1 {
+    font-size: 24px;
+    margin: 0;
+    background: transparent;
+    font-family: 'montserrat-arabic';
+    font-weight: 800;
+    direction: rtl;
+    color: #000000;
+}
+
+.content-3-heading-2 {
+    font-size: 18px;
+    margin: 0;
+    background: transparent;
+    font-family: 'montserrat-arabic';
+    font-weight: 800;
+    color: #4f5afa;
+    direction: rtl;
+    margin-top: 14px;
+}
+
+.content-3-heading-3 {
+    font-size: 18px;
+    margin: 0;
+    background: transparent;
+    font-family: 'montserrat-arabic';
+    font-weight: 800;
+    direction: rtl;
+    color: #4f5afa;
+    margin-top: 5px;
+}
+
+.invest-company-cards {
+    padding: 0px 30px;
+    margin-top: 40px;
+}
+
+.company-logo-img-box {
+    display: flex;
+    justify-content: center;
+}
+
+.company-logo-img-box img {
+    width: 100px;
+}
+
+.invest-company-heading{
+    font-size: 24px;
+    margin: 0;
+    background: transparent;
+    font-family: 'montserrat-arabic';
+    font-weight: 800;
+    direction: rtl;
+    margin-top: 5px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.invest-company-content{
+    font-size: 15px;
+    margin: 0;
+    background: transparent;
+    font-family: 'montserrat-arabic';
+    font-weight: 600;
+    direction: rtl;
+    margin-top: 5px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.invest-company-link-box {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.invest-company-link {
+    font-size: 12px;
+    margin: 0;
+    background: transparent;
+    font-family: 'montserrat-arabic';
+    font-weight: 600;
+    direction: rtl;
+    margin-top: 5px;
+    text-align: center;
+    margin-top: 20px;
+    color: #4f5afa;
+}
+
+.company-section-button-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0px;
+    margin-top: 30px;
+    position: relative;
+    z-index: 9;
+}
+
+.company-section-button-box button {
+    direction: rtl;
+    border: none;
+    background-color: #4958fd;
+    padding: 16px 71px;
+    color: white;
+    font-size: 16px;
+    font-weight: 800;
+    border-radius: 40px;
+    box-shadow: 0px 15px 24px -16px #4958fd;
+    font-family: 'montserrat-arabic';
+}
