@@ -711,7 +711,7 @@ nav {
     width: 60px;
 }
 
-.invest-heading{
+.invest-heading {
     font-size: 24px;
     margin: 0;
     background: transparent;
@@ -723,7 +723,7 @@ nav {
     margin-top: 10px;
 }
 
-.invest-content{
+.invest-content {
     font-size: 18px;
     margin: 0;
     background: transparent;
@@ -785,7 +785,7 @@ nav {
     width: 100px;
 }
 
-.invest-company-heading{
+.invest-company-heading {
     font-size: 24px;
     margin: 0;
     background: transparent;
@@ -797,7 +797,7 @@ nav {
     margin-top: 10px;
 }
 
-.invest-company-content{
+.invest-company-content {
     font-size: 15px;
     margin: 0;
     background: transparent;
@@ -848,4 +848,82 @@ nav {
     border-radius: 40px;
     box-shadow: 0px 15px 24px -16px #4958fd;
     font-family: 'montserrat-arabic';
+}
+
+.content-card {
+    margin-top: 70px;
+}
+
+.content-card h1 {
+    font-size: 28px;
+    margin: 0;
+    background: transparent;
+    font-family: 'montserrat-arabic';
+    font-weight: 800;
+    direction: rtl;
+    text-align: center;
+}
+
+.content-card h2 {
+    font-size: 44px;
+    margin: 0;
+    background: transparent;
+    font-family: 'montserrat-arabic';
+    font-weight: 800;
+    direction: rtl;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.content-card p {
+    font-size: 24px;
+    margin: 0;
+    background: transparent;
+    font-family: 'montserrat-arabic';
+    font-weight: 800;
+    direction: rtl;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.down {
+    opacity: 1;
+    transform: translateY(50px);
+}
+
+[data-animation-fadeup] {
+    opacity: 0;
+    transform: translateY(var(--animation-fadeup));
+    transition: transform var(--animation-duration) ease-out, opacity var(--animation-duration);
+}
+
+.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.counting-number {
+    font-size: 44px;
+    position: relative;
+    transition: transform 0.2s ease, opacity 0s ease;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    font-weight: 800;
+    font-family: 'montserrat-arabic';
+    margin-top: 10px;
+}
+
+.counting-number span {
+    transition: transform 0.2s ease, opacity 0s ease;
 }

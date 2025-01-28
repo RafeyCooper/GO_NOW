@@ -108,12 +108,13 @@ let animationFlags = {
     captainNumber: false,
     employeesNumber: false,
     ridesCompleteNumber: false,
-    fleetSizeNumber: false
+    fleetSizeNumber: false,
+    contentCard1: false
 };
 
 function animateNumbersOnScroll() {
     // Select the elements you want to animate
-    const elements = document.querySelectorAll('#cities-number, #clients-number, #captain-number, #employees-number, #ridescomplete-number, #fleetsize-number');
+    const elements = document.querySelectorAll('#cities-number, #clients-number, #captain-number, #employees-number, #ridescomplete-number, #fleetsize-number, #content-card-1, #content-card-2, #content-card-3, #content-card-4');
 
     elements.forEach(element => {
         const rect = element.getBoundingClientRect();
