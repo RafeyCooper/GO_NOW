@@ -544,18 +544,17 @@ nav {
     justify-content: center;
     align-items: center;
     padding: 30px 0px;
-    margin-top: 20px;
     position: relative;
-    z-index: 9;
+    z-index: 10;
 }
 
 .first-section-button-box button {
     direction: rtl;
     border: none;
     background-color: #4958fd;
-    padding: 18px 87px;
+    padding: 16px 71px;
     color: white;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 800;
     border-radius: 40px;
     box-shadow: 0px 15px 24px -16px #4958fd;
