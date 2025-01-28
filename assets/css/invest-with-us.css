@@ -505,7 +505,7 @@ nav {
     font-weight: 600;
     direction: rtl;
     text-align: center;
-    color: #000000;
+    color: #4f5afa;
     margin-top: 10px;
 }
 
@@ -627,6 +627,19 @@ nav {
 .cloud-box-5 img {
     width: 100%;
     margin-left: -36px;
+}
+
+.cloud-box-6 {
+    position: absolute;
+    top: 320px;
+    z-index: 9;
+    overflow: hidden;
+    opacity: 1;
+}
+
+.cloud-box-6 img {
+    width: 100%;
+    margin-left: 189px;
 }
 
 .swiper-container {
