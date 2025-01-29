@@ -104,10 +104,12 @@ $("#formBox").on('submit', function (e) {
 //     }
 // });
 
+
 document.addEventListener("DOMContentLoaded", function () {
     const boxes = document.querySelector('.boxes');
     const animation = document.querySelector('.animation');
 
+    // Modify rootMargin to specify how far from the bottom to trigger the action
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -127,7 +129,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.log("Boxes section is out of the viewport!");
             }
         });
-    }, { threshold: 0.1 });
+    }, {
+        threshold: 0.1, // Start triggering when 10% of the element is in view
+        rootMargin: '0px 0px -200px 0px' // Adjust this to set a margin from the bottom
+    });
 
     observer.observe(boxes);
 });
