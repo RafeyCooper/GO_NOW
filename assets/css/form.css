@@ -420,9 +420,13 @@ input::placeholder {
     color: #e2e2e2;
 }
 
-/* input:focus-visible{
+input:focus-visible{
     border-color: #4f5afa !important;
-} */
+}
+
+input:focus{
+    outline: none;
+}
 
 .form_group {
     display: flex;
