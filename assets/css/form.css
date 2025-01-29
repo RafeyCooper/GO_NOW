@@ -481,6 +481,7 @@ input:focus {
     transition: all ease-in-out 0.3s;
     overflow: auto;
     margin-top: 15px;
+    flex-direction: row-reverse;
 }
 
 .box {
