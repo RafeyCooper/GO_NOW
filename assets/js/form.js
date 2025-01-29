@@ -15,7 +15,7 @@ phoneInput.addEventListener('focus', function () {
 
 phoneInput.addEventListener('blur', function () {
     console.log('Input lost focus!');
-    if (this.value === 5) {
+    if (this.value === '5') {
         this.value = '';
     }
 });
@@ -70,46 +70,11 @@ $("#formBox").on('submit', function (e) {
 });
 
 
-// const swiperForm = new Swiper('.swiper-container-form', {
-//     slidesPerView: 1,
-//     spaceBetween: 0,
-//     centeredSlides: true,
-//     pagination: {
-//         el: '.swiper-pagination-form',
-//         clickable: true,
-//     },
-//     loop: false,
-//     grabCursor: true,
-//     on: {
-//         init: function () {
-//             let slides = document.querySelectorAll('.swiper-slide');
-//             slides.forEach(slide => {
-//                 slide.style.transform = 'scale(0.8)';
-//             });
-//             let activeSlide = document.querySelectorAll('.swiper-slide-active');
-//             activeSlide.forEach(slide => {
-//                 slide.style.transform = 'scale(1)';
-//             });
-//         },
-//         slideChangeTransitionStart: function () {
-//             let slides = document.querySelectorAll('.swiper-slide');
-//             slides.forEach(slide => {
-//                 slide.style.transform = 'scale(0.8)';
-//             });
-//             let activeSlide = document.querySelectorAll('.swiper-slide-active');
-//             activeSlide.forEach(slide => {
-//                 slide.style.transform = 'scale(1)';
-//             });
-//         }
-//     }
-// });
-
 
 document.addEventListener("DOMContentLoaded", function () {
     const boxes = document.querySelector('.boxes');
     const animation = document.querySelector('.animation');
 
-    // Modify rootMargin to specify how far from the bottom to trigger the action
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -130,8 +95,8 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }, {
-        threshold: 0.1, // Start triggering when 10% of the element is in view
-        rootMargin: '0px 0px -200px 0px' // Adjust this to set a margin from the bottom
+        threshold: 0.1,
+        rootMargin: '0px 0px -200px 0px'
     });
 
     observer.observe(boxes);
