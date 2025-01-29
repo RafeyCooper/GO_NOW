@@ -48,7 +48,9 @@ phoneInput.addEventListener('blur', function () {
 });
 
 window.onload = function() {
-    document.querySelector('#name').focus();
+   const initailinput = document.querySelector('#name');
+   initailinput.focus();
+   initailinput.click();
 };
 
 
