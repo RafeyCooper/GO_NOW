@@ -9,13 +9,13 @@ const phoneInput = document.getElementById('phoneInput');
 
 phoneInput.addEventListener('focus', function () {
     if (this.value === '') {
-        this.value = '5';
+        this.value = 5;
     }
 });
 
 phoneInput.addEventListener('blur', function () {
     console.log('Input lost focus!');
-    if (this.value === '5') {
+    if (this.value === 5) {
         this.value = '';
     }
 });
