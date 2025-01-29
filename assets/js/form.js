@@ -47,6 +47,10 @@ phoneInput.addEventListener('blur', function () {
     }
 });
 
+window.onload = function() {
+    document.querySelector('#name').focus();
+};
+
 
 function submitForm(){
     const name = $("#name").val();
