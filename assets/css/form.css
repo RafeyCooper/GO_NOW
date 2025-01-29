@@ -1,0 +1,542 @@
+@font-face {
+    font-family: 'montserrat-arabic';
+    src: url('../font/Montserrat-Arabic\ Thin\ 250.otf');
+    font-weight: 250;
+}
+
+@font-face {
+    font-family: 'montserrat-arabic';
+    src: url('../font/Montserrat-Arabic\ Light\ 300.otf');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'montserrat-arabic';
+    src: url('../font/Montserrat-Arabic\ Regular\ 400.otf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'montserrat-arabic';
+    src: url('../font/Montserrat-Arabic\ Medium\ 500.otf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'montserrat-arabic';
+    src: url('../font/Montserrat-Arabic\ SemiBold\ 600.otf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'montserrat-arabic';
+    src: url('../font/Montserrat-Arabic\ Bold\ 700.otf');
+    font-weight: 700;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'montserrat-arabic';
+    background-color: #fafbfd !important;
+    /* background-color: white !important; */
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px;
+    align-items: center;
+    position: fixed;
+    /* Make the nav fixed */
+    top: 0;
+    /* Stick to the top of the viewport */
+    left: 0;
+    right: 0;
+    background-color: white;
+    /* Optional: Set background color so it's visible on scroll */
+    z-index: 99;
+    /* Ensure the nav stays on top of other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 100px;
+}
+
+.logo {
+    font-size: 29px;
+    font-weight: 700;
+}
+
+.link {
+    margin-right: 21px;
+}
+
+.link a {
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 700;
+    color: #5b60f6;
+}
+
+.hamburger-icon {
+    font-size: 32px;
+}
+
+.hamburger-icon-box {
+    /* border: 1px solid black; */
+    /* width: 35px; */
+    /* height: 35px; */
+    padding: 4px;
+    border-radius: 35px;
+    /* box-shadow: 0px 0px 11px -6px #000; */
+}
+
+.dropdown-menu-custom {
+    display: none;
+    position: absolute;
+    top: 100px;
+    width: 90%;
+    /* right: 10px; */
+    background-color: #0000007a;
+    backdrop-filter: blur(5px);
+    border-radius: 0px 0px 5px 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu-custom ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-menu-custom ul li {
+    padding: 10px;
+}
+
+.dropdown-menu-custom ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'montserrat-arabic';
+    display: block;
+    font-size: 15px;
+}
+
+.dropdown-menu-custom ul li:hover {
+    background-color: #444;
+}
+
+.dropdown-menu-custom.show {
+    display: block;
+    /* Show the menu */
+}
+
+
+/* Sidebar styles */
+.sidebar-custom {
+    position: fixed;
+    top: -50px;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FAFBFD;
+    /* backdrop-filter: blur(5px); */
+    /* box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5); */
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.sidebar-custom ul {
+    list-style: none;
+    padding: 20px 35px;
+    margin: 0;
+}
+
+
+.sidebar-custom ul li {
+    position: relative;
+    padding: 10px 0px;
+    border-radius: 40px;
+    margin: 10px 0px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    overflow: hidden;
+    /* Ensures the animation stays within bounds */
+    transition: color 0.5s ease;
+}
+
+.sidebar-custom ul li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    left: 50%;
+    /* Start from the center horizontally */
+    transform: translateX(-50%);
+    /* Ensure centering */
+    width: 0;
+    /* Initially, no width */
+    height: 100%;
+    background-color: #4958fd;
+    /* Hover background color */
+    z-index: 0;
+    /* transition: all 0.1s ease; Animate the width on hover */
+    border-radius: 40px;
+    /* Same radius as parent for smooth edges */
+}
+
+.sidebar-custom ul li a {
+    position: relative;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'montserrat-arabic';
+    font-size: 16px;
+    z-index: 1;
+    /* Ensure text appears above the background */
+    /* transition: all 0.1s ease; */
+}
+
+.sidebar-custom ul li:hover::before {
+    opacity: 1;
+    width: 200%;
+    /* Expand to cover from center to edges */
+}
+
+.sidebar-custom ul li:hover a {
+    color: white;
+}
+
+.tick-icon {
+    position: absolute;
+    left: 22px;
+    top: 14px;
+}
+
+.menu-bar-link {
+    direction: rtl;
+    font-weight: 800;
+    font-family: 'montserrat-arabic';
+    font-size: 24px;
+    color: #4f5afa;
+}
+
+.menu-last-link-box {
+    text-align: center;
+}
+
+/* .sidebar-custom ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'montserrat-arabic';
+    font-size: 19px;
+}
+
+.sidebar-custom ul li:hover {
+    background-color: #4958fd;
+}
+
+.sidebar-custom ul li:hover a {
+    color: white;
+} */
+
+
+.sidebar-custom.show {
+    top: 100px;
+    opacity: 1;
+    z-index: 98;
+}
+
+/* Close button */
+.close-btn {
+    text-align: right;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.close-btn .close-icon {
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+    background-color: #4958fd;
+    padding: 5px;
+    border-radius: 6px;
+}
+
+#nav-icon4 {
+    width: 30px;
+    height: 35px;
+    position: relative;
+    /* margin: 50px auto; */
+    margin-top: 15px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+#nav-icon4 span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #000000;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+
+#nav-icon4 span:nth-child(1) {
+    top: 0px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+#nav-icon4 span:nth-child(2) {
+    top: 9px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+#nav-icon4 span:nth-child(3) {
+    top: 18px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+#nav-icon4.open span:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: -1px;
+    left: 7px;
+}
+
+#nav-icon4.open span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+}
+
+#nav-icon4.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 20px;
+    left: 7px;
+}
+
+.form-section {
+    margin-top: 150px;
+    padding: 0px 20px;
+}
+
+.form-heading {
+    font-size: 40px;
+    margin: 0;
+    background: transparent;
+    font-family: 'montserrat-arabic';
+    font-weight: 800;
+    direction: rtl;
+}
+
+.form_group {
+    margin-top: 30px;
+}
+
+label {
+    font-size: 20px;
+    margin: 0;
+    background: transparent;
+    font-family: 'montserrat-arabic';
+    font-weight: 800;
+    direction: rtl;
+}
+
+.sub-label {
+    font-size: 14px;
+    margin-bottom: 0;
+    margin-top: 10px;
+    background: transparent;
+    font-family: 'montserrat-arabic';
+    font-weight: 500;
+    direction: rtl;
+}
+
+input[type='text'] {
+    font-size: 18px !important;
+    font-family: 'montserrat-arabic' !important;
+    font-weight: 500;
+    direction: rtl;
+    width: 100%;
+    border: 2px solid white;
+    background-color: white;
+    padding: 18px;
+    border-radius: 16px;
+    margin-top: 16px !important;
+}
+
+input[type='number'] {
+    font-size: 18px !important;
+    font-family: 'montserrat-arabic' !important;
+    font-weight: 500;
+    direction: ltr;
+    width: 100%;
+    border: 2px solid white;
+    background-color: white;
+    padding: 18px;
+    border-radius: 16px;
+    margin-top: 16px !important;
+}
+
+input::placeholder {
+    color: #e2e2e2;
+}
+
+input:focus-visible{
+    border-color: #4f5afa !important;
+}
+
+.form_group {
+    display: flex;
+    flex-direction: column;
+}
+
+.red {
+    color: #ff3131;
+}
+
+.country-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 115px;
+    height: 63px;
+    border-radius: 16px;
+    background-color: white;
+    margin-top: 16px;
+    padding: 0px 10px;
+}
+
+.country-box img {
+    width: 40px;
+    border-radius: 5px;
+}
+
+.country-box p {
+    font-size: 20px;
+    margin: 0;
+    background: transparent;
+    font-family: 'montserrat-arabic';
+    font-weight: 800;
+    margin-left: 5px !important;
+}
+
+.input_number_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+
+.selected {
+    border-color: #4f5afa !important;
+}
+
+.boxes {
+    display: flex;
+}
+
+.box {
+    border: 3px solid white;
+    padding: 10px 0px;
+    margin: 10px;
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.box .number{
+    font-size: 30px;
+    margin: 0;
+    background: transparent;
+    font-family: 'montserrat-arabic';
+    font-weight: 800;
+}
+
+.box .text{
+    font-size: 14px;
+    margin: 0;
+    background: transparent;
+    font-family: 'montserrat-arabic';
+    font-weight: 700;
+}
+
+.blue {
+    color: #4f5afa !important;
+}
+
+.last-form-text {
+    margin-top: 20px;
+}
+
+.last-form-text p {
+    font-size: 13px;
+    margin: 0;
+    background: transparent;
+    font-family: 'montserrat-arabic';
+    font-weight: 700;
+    text-align: center;
+}
+
+.last-button-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.last-button-box button {
+    direction: rtl;
+    border: none;
+    background-color: #4958fd;
+    padding: 11px 40px;
+    color: white;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 40px;
+    box-shadow: 0px 4px 7px -1px #4958fd;
+    font-family: 'montserrat-arabic';
+    font-weight: 800;
+}
