@@ -501,13 +501,37 @@ input:focus {
     transition: all ease-in-out 0.3s;
 }
 
+.boxes::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 99;
+    pointer-events: all;
+    border-radius: 10px;
+    transition: all ease-in-out 0.3s;
+}
+
+
 .boxes.no-overlay::before {
     opacity: 0;
 }
 
 .boxes.no-display::before {
+    display: none;
+}
+
+.boxes.no-overlay::after {
     opacity: 0;
 }
+
+.boxes.no-display::after {
+    display: none;
+}
+
 
 .animation {
     position: absolute;

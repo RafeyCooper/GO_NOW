@@ -101,3 +101,55 @@ document.addEventListener("DOMContentLoaded", function () {
 
     observer.observe(boxes);
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const boxes = document.querySelector('.boxes');
+    const animation = document.querySelector('.animation');
+
+    // Function to trigger fade-out and remove overlay
+    function triggerFadeOut() {
+        animation.classList.add('fade-out');
+        boxes.classList.add('no-overlay');
+        setTimeout(() => {
+            animation.classList.add('no-display');
+            boxes.classList.add('no-display');
+        }, 300);
+    }
+
+    // Handle click event
+    boxes.addEventListener('click', function () {
+        triggerFadeOut();
+    });
+
+    // Variables for swipe detection
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchEndX = 0;
+    let touchEndY = 0;
+
+    // Detect touch start (where the user starts the swipe)
+    boxes.addEventListener('touchstart', function (event) {
+        touchStartX = event.changedTouches[0].screenX;
+        touchStartY = event.changedTouches[0].screenY;
+    });
+
+    // Detect touch end (where the user ends the swipe)
+    boxes.addEventListener('touchend', function (event) {
+        touchEndX = event.changedTouches[0].screenX;
+        touchEndY = event.changedTouches[0].screenY;
+
+        handleSwipeGesture();
+    });
+
+    // Handle the swipe gesture
+    function handleSwipeGesture() {
+        const deltaX = touchEndX - touchStartX;
+        const deltaY = touchEndY - touchStartY;
+
+        // Check for horizontal swipe (swipe left or right)
+        if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 30) {
+            triggerFadeOut();
+        }
+    }
+});
