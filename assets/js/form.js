@@ -22,7 +22,7 @@ phoneInput.addEventListener('blur', function () {
 
 phoneInput.addEventListener('input', function () {
     const value = this.value;
-    
+
     if (value.charAt(0) !== '5') {
         this.value = '5' + value.replace(/[^0-9]/g, '').slice(0, 8);
     } else {
@@ -47,14 +47,14 @@ phoneInput.addEventListener('blur', function () {
     }
 });
 
-window.onload = function() {
-   const initailinput = document.querySelector('#name');
-   initailinput.focus();
-   initailinput.click();
+window.onload = function () {
+    const initailinput = document.querySelector('#name');
+    initailinput.focus();
+    initailinput.click();
 };
 
 
-function submitForm(){
+function submitForm() {
     const name = $("#name").val();
     const phone = $("#phoneInput").val();
     const selectedBoxValue = $(".box.selected").data("value");
@@ -64,7 +64,7 @@ function submitForm(){
     console.log("Selected Box ", selectedBoxValue)
 }
 
-$("#formBox").on('submit', function(e){
+$("#formBox").on('submit', function (e) {
     e.preventDefault();
     submitForm();
 });
@@ -103,3 +103,31 @@ $("#formBox").on('submit', function(e){
 //         }
 //     }
 // });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const boxes = document.querySelector('.boxes');
+    const animation = document.querySelector('.animation');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                console.log("Boxes section is in the viewport!");
+
+                setTimeout(() => {
+                    animation.classList.add('fade-out');
+                    boxes.classList.add('no-overlay');
+                }, 2000);
+
+                setTimeout(() => {
+                    animation.classList.add('no-display');
+                    boxes.classList.add('no-display');
+                }, 2300);
+
+            } else {
+                console.log("Boxes section is out of the viewport!");
+            }
+        });
+    }, { threshold: 0.1 });
+
+    observer.observe(boxes);
+});
