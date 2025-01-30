@@ -554,6 +554,7 @@ input:focus {
     background-color: white;
     border-radius: 20px;
     transition: all ease-in-out 0.3s;
+    position: relative;
 }
 
 .box .number {
@@ -614,4 +615,20 @@ input:focus {
     position: relative;
     border-radius: 20px;
     transition: transform 0.3s ease-in-out;
+}
+
+.percentage-box {
+    background-color: #fdd500;
+    font-family: 'montserrat-arabic';
+    font-weight: 800;
+    font-size: 14px;
+    border-radius: 20px;
+    position: absolute;
+    left: -15px;
+    top: -18px;
+    padding: 5px 20px;
+}
+
+.percentage-box img {
+    width: 13px;
 }
