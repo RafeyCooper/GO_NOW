@@ -640,3 +640,12 @@ input:focus {
 .percentage-box img {
     width: 13px;
 }
+
+.error-msg {
+    color: red !important;
+    direction: rtl;
+}
+
+.successMessageText {
+    direction: rtl;
+}

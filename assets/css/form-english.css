@@ -479,6 +479,7 @@ input:focus {
     margin-top: 15px;
     position: relative;
     transition: all ease-in-out 0.3s;
+    padding: 15px 0px;
 }
 
 .boxes::before {
@@ -631,4 +632,8 @@ input:focus {
 
 .percentage-box img {
     width: 13px;
+}
+
+.error-msg {
+    color: red !important;
 }

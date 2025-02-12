@@ -178,43 +178,14 @@
                         <img src="./assets/img/Flag-Saudi-Arabia.png" alt="">
                         <p>+966</p>
                     </div>
-                    <input type="number" id="phoneInput" inputmode="numeric" placeholder="5XXXXXXX" maxlength="9" required>
+                    <input type="number" id="phoneInput" inputmode="numeric" placeholder="5XXXXXXX" maxlength="9">
                 </div>
+                <p class="error-msg" id="errorMsg"></p>
             </div>
 
             <div class="form_group">
                 <label for="">مبلغ الإستثمار<span class="red">*</span></label>
                 <p class="sub-label">حدد ميزانية الإستثمار المتوفرة لديك</p>
-
-                <!-- <div class="swiper-container-form mt-4">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="boxes">
-                                <div class="box" data-value="20000">
-                                    <div class="number">20,000</div>
-                                    <div class="text">ريال سعودي</div>
-                                </div>
-                                <div class="box selected" data-value="10000">
-                                    <div class="number">10,000</div>
-                                    <div class="text">ريال سعودي</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="boxes">
-                                <div class="box" data-value="40000">
-                                    <div class="number">+40,000</div>
-                                    <div class="text">ريال سعودي</div>
-                                </div>
-                                <div class="box" data-value="30000">
-                                    <div class="number">30,000</div>
-                                    <div class="text">ريال سعودي</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-pagination-form"></div>
-                </div> -->
 
                 <div class="boxes">
                     <div class="box selected" data-value="10000">
@@ -247,7 +218,9 @@
                     </div>
                 </div>
                 <div class="animation">
-                    <dotlottie-player src="https://lottie.host/9f290c9d-11f3-4c79-b326-8e80115296f0/F7TqTFLE1U.lottie" background="transparent" speed="1" style="width: 100%; height: 285px" loop autoplay></dotlottie-player>
+                    <dotlottie-player src="https://lottie.host/9f290c9d-11f3-4c79-b326-8e80115296f0/F7TqTFLE1U.lottie"
+                        background="transparent" speed="1" style="width: 100%; height: 285px" loop
+                        autoplay></dotlottie-player>
                 </div>
             </div>
 
@@ -256,14 +229,18 @@
                 <p>و<span class="blue">الشروط </span>و<span class="blue">سياسة الخصوصية</span></p>
             </div>
 
+            <p class="success-msg" id="successMsg">
+
+            </p>
+
             <div class="last-button-box">
-                <button>استثمر الآن!</button>
+                <button type="submit">استثمر الآن!</button>
             </div>
 
         </form>
     </section>
 
-    
+
 
 
     <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
@@ -279,6 +256,53 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="./assets/js/script.js?ver=1.9"></script>
     <script src="./assets/js/form.js?ver=1.4"></script>
+    <script>
+
+        $(document).ready(function () {
+            $('#formBox').on('submit', function (event) {
+                event.preventDefault();
+
+                var name = $('#name').val();
+                var phoneInput = $('#phoneInput').val();
+                var phone = '+966' + phoneInput;
+                var investment = $('.box.selected').data('value');
+
+                if (phoneInput.length !== 9) {
+                    console.log("error shown");
+                    $('#errorMsg').text('رقم الهاتف غير صالح');
+                    return;
+                } else {
+                    $('#errorMsg').text('');
+                }
+
+                $.ajax({
+                    url: 'php/save_to_csv.php',
+                    method: 'POST',
+                    data: {
+                        name: name,
+                        phone: phone,
+                        investment: investment
+                    },
+                    dataType: 'json',
+                    success: function (response) {
+                        console.log(response);
+                        if (response.status === "success") {
+                            $('#name').val('');
+                            $('#phoneInput').val('');
+                            $("#successMsg").html(`<div class="alert alert-success m-0 mt-4 successMessageText" role="alert">
+                                شكرًا لك! سنتواصل معك قريبًا
+                            </div>`);
+
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        alert('Error: ' + error);
+                    }
+                });
+            });
+        });
+
+    </script>
 </body>
 
 </html>
