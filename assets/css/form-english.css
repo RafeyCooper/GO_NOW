@@ -360,7 +360,7 @@ nav {
 }
 
 .form-heading {
-    font-size: 32px;
+    font-size: 26px;
     margin: 0;
     background: transparent;
     font-family: 'montserrat-arabic';
@@ -373,7 +373,7 @@ nav {
 }
 
 label {
-    font-size: 20px;
+    font-size: 17px;
     margin: 0;
     background: transparent;
     font-family: 'montserrat-arabic';
@@ -381,7 +381,7 @@ label {
 }
 
 .sub-label {
-    font-size: 14px;
+    font-size: 13px;
     margin-bottom: 0;
     margin-top: 10px;
     background: transparent;
