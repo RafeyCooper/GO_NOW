@@ -343,7 +343,7 @@
             </div>
 
             <div class="company-section-button-box" data-aos="zoom-in-up" data-aos-duration="1000">
-                <button>انضّم إلى الشركة!</button>
+                <button id="openForm4">انضّم إلى الشركة!</button>
             </div>
 
         </div>
@@ -404,7 +404,7 @@
             </div>
 
             <div class="company-section-button-box" data-aos="zoom-in-up" data-aos-duration="1000">
-                <button>استثمر معنا الآن!</button>
+                <button id="openForm2">استثمر معنا الآن!</button>
             </div>
 
         </div>
@@ -444,7 +444,7 @@
     </div>
 
     <div class="last-button-box">
-        <button data-aos="fade-up" data-aos-duration="1000">استثمر الآن!</button>
+        <button data-aos="fade-up" data-aos-duration="1000" id="openForm3">استثمر الآن!</button>
     </div>
 
 
@@ -501,7 +501,8 @@
 
 </html>
 <script>
-    $("#openForm").on('click', function(){
+    $("#openForm, #openForm2, #openForm3, #openForm4").on('click', function(){
         window.location.href = "form.html"
     })
+   
 </script>
