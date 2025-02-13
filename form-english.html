@@ -309,14 +309,8 @@
                         if (response.status === "success") {
                             $('#name').val('');
                             $('#phoneInput').val('');
-                            //             $("#successMsg").html(`<div class="alert alert-success m-0 mt-4" role="alert">
-                            //     Thank you! We will contact you soon
-                            // </div>`)
-
-                            $("#successModal").modal('show')
-                            setTimeout(() => {
-                                $("#successModal").modal('hide')
-                            }, 2000);
+                            
+                            window.location.href = 'success-english.html'
                         }
                     },
                     error: function (xhr, status, error) {

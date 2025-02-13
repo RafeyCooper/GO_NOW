@@ -1,0 +1,84 @@
+@font-face {
+    font-family: 'montserrat-arabic';
+    src: url('../font/Montserrat-Arabic\ Thin\ 250.otf');
+    font-weight: 250;
+}
+
+@font-face {
+    font-family: 'montserrat-arabic';
+    src: url('../font/Montserrat-Arabic\ Light\ 300.otf');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'montserrat-arabic';
+    src: url('../font/Montserrat-Arabic\ Regular\ 400.otf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'montserrat-arabic';
+    src: url('../font/Montserrat-Arabic\ Medium\ 500.otf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'montserrat-arabic';
+    src: url('../font/Montserrat-Arabic\ SemiBold\ 600.otf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'montserrat-arabic';
+    src: url('../font/Montserrat-Arabic\ Bold\ 700.otf');
+    font-weight: 700;
+}
+
+
+h1{
+    font-family: 'montserrat-arabic' !important;
+    text-align: center !important;
+    direction: rtl !important;
+    font-weight: 800 !important;
+    font-size: 24px !important;
+}
+
+h3{
+    font-family: 'montserrat-arabic' !important;
+    text-align: center !important;
+    direction: rtl !important;
+    font-weight: 600 !important;
+    font-size: 18px !important;
+    margin-top: 30px !important;
+}
+
+p{
+    font-family: 'montserrat-arabic' !important;
+    text-align: center !important;
+    direction: rtl !important;
+    font-weight: 500 !important;
+    font-size: 13px !important;
+    margin: 0 !important;
+    color: #4f5afa;
+}
+
+.last-button-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 75px;
+}
+
+.last-button-box button {
+    direction: rtl;
+    border: none;
+    background-color: #4958fd;
+    padding: 17px 40px;
+    color: white;
+    width: 90%;
+    font-size: 16px;
+    border-radius: 40px;
+    box-shadow: 0px 4px 7px -1px #4958fd;
+    font-family: 'montserrat-arabic';
+    font-weight: 800;
+}
