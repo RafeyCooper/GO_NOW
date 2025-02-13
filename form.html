@@ -167,14 +167,16 @@
         <h1 class="form-heading animate__animated animate__fadeInRight animate__duration-1s">هلا والله، 👋</h1>
         <form class="mt-5" id="formBox">
             <div class="form_group">
-                <label for="" class="animate__animated animate__fadeInRight animate__duration-1s">الأسم الكريم<span class="red">*</span></label>
+                <label for="" class="animate__animated animate__fadeInRight animate__duration-1s">الأسم الكريم<span
+                        class="red">*</span></label>
                 <div class="inputnamediv">
-                    <input type="text" id="name" placeholder="الأسم الأول والأخير" required >
+                    <input type="text" id="name" placeholder="الأسم الأول والأخير" required>
                 </div>
             </div>
 
             <div class="form_group">
-                <label for="" class="animate__animated animate__fadeInRight animate__duration-1s">رقم الجوال<span class="red">*</span></label>
+                <label for="" class="animate__animated animate__fadeInRight animate__duration-1s">رقم الجوال<span
+                        class="red">*</span></label>
                 <div class="input_number_box">
                     <div class="country-box">
                         <img src="./assets/img/Flag-Saudi-Arabia.png" alt="">
@@ -186,8 +188,10 @@
             </div>
 
             <div class="form_group">
-                <label for="" class="animate__animated animate__fadeInRight animate__duration-1s">مبلغ الإستثمار<span class="red">*</span></label>
-                <p class="sub-label animate__animated animate__fadeInRight animate__duration-1s">حدد ميزانية الإستثمار المتوفرة لديك</p>
+                <label for="" class="animate__animated animate__fadeInRight animate__duration-1s">مبلغ الإستثمار<span
+                        class="red">*</span></label>
+                <p class="sub-label animate__animated animate__fadeInRight animate__duration-1s">حدد ميزانية الإستثمار
+                    المتوفرة لديك</p>
 
                 <div class="boxes">
                     <div class="box selected" data-value="10000">
@@ -244,6 +248,19 @@
 
 
 
+    <!-- Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p class="modalSuccessText">أرسل بنجاح</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 
     <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -261,6 +278,7 @@
     <script>
 
         $(document).ready(function () {
+
             $('#formBox').on('submit', function (event) {
                 event.preventDefault();
 
@@ -268,6 +286,10 @@
                 var phoneInput = $('#phoneInput').val();
                 var phone = '+966' + phoneInput;
                 var investment = $('.box.selected').data('value');
+
+                var timestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
+
+                console.log(timestamp)
 
                 if (phoneInput.length !== 9) {
                     console.log("error shown");
@@ -283,7 +305,8 @@
                     data: {
                         name: name,
                         phone: phone,
-                        investment: investment
+                        investment: investment,
+                        timestamp: timestamp
                     },
                     dataType: 'json',
                     success: function (response) {
@@ -291,10 +314,13 @@
                         if (response.status === "success") {
                             $('#name').val('');
                             $('#phoneInput').val('');
-                            $("#successMsg").html(`<div class="alert alert-success m-0 mt-4 successMessageText" role="alert">
-                                شكرًا لك! سنتواصل معك قريبًا
-                            </div>`);
-
+                            // $("#successMsg").html(`<div class="alert alert-success m-0 mt-4 successMessageText" role="alert">
+                            //     شكرًا لك! سنتواصل معك قريبًا
+                            // </div>`);
+                            $("#successModal").modal('show')
+                            setTimeout(() => {
+                                $("#successModal").modal('hide')
+                            }, 2000);
                         }
                     },
                     error: function (xhr, status, error) {

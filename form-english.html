@@ -169,12 +169,14 @@
         <h1 class="form-heading animate__animated animate__fadeInLeft animate__duration-1s">Welcome, I swear 👋</h1>
         <form class="mt-5" id="formBox">
             <div class="form_group">
-                <label for="" class="animate__animated animate__fadeInLeft animate__duration-1s">The honorable name<span class="red">*</span></label>
+                <label for="" class="animate__animated animate__fadeInLeft animate__duration-1s">The honorable name<span
+                        class="red">*</span></label>
                 <input type="text" id="name" placeholder="First and last name" required>
             </div>
 
             <div class="form_group">
-                <label for="" class="animate__animated animate__fadeInLeft animate__duration-1s">Mobile number<span class="red">*</span></label>
+                <label for="" class="animate__animated animate__fadeInLeft animate__duration-1s">Mobile number<span
+                        class="red">*</span></label>
                 <div class="input_number_box">
                     <div class="country-box">
                         <img src="./assets/img/Flag-Saudi-Arabia.png" alt="">
@@ -186,8 +188,10 @@
             </div>
 
             <div class="form_group">
-                <label for="" class="animate__animated animate__fadeInLeft animate__duration-1s">Investment amount<span class="red">*</span></label>
-                <p class="sub-label animate__animated animate__fadeInLeft animate__duration-1s">Determine your available investment budget</p>
+                <label for="" class="animate__animated animate__fadeInLeft animate__duration-1s">Investment amount<span
+                        class="red">*</span></label>
+                <p class="sub-label animate__animated animate__fadeInLeft animate__duration-1s">Determine your available
+                    investment budget</p>
 
                 <div class="boxes">
                     <div class="box selected" data-value="10000">
@@ -242,7 +246,16 @@
         </form>
     </section>
 
-
+    <!-- Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p class="modalSuccessText">Submit successfully</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
@@ -261,6 +274,7 @@
     <script>
 
         $(document).ready(function () {
+
             $('#formBox').on('submit', function (event) {
                 event.preventDefault();
 
@@ -268,6 +282,9 @@
                 var phoneInput = $('#phoneInput').val();
                 var phone = '+966' + phoneInput;
                 var investment = $('.box.selected').data('value');
+                var timestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
+
+                console.log(timestamp)
 
                 if (phoneInput.length !== 9) {
                     console.log("error shown");
@@ -283,7 +300,8 @@
                     data: {
                         name: name,
                         phone: phone,
-                        investment: investment
+                        investment: investment,
+                        timestamp: timestamp
                     },
                     dataType: 'json',
                     success: function (response) {
@@ -291,9 +309,14 @@
                         if (response.status === "success") {
                             $('#name').val('');
                             $('#phoneInput').val('');
-                            $("#successMsg").html(`<div class="alert alert-success m-0 mt-4" role="alert">
-                    Thank you! We will contact you soon
-                </div>`)
+                            //             $("#successMsg").html(`<div class="alert alert-success m-0 mt-4" role="alert">
+                            //     Thank you! We will contact you soon
+                            // </div>`)
+
+                            $("#successModal").modal('show')
+                            setTimeout(() => {
+                                $("#successModal").modal('hide')
+                            }, 2000);
                         }
                     },
                     error: function (xhr, status, error) {

@@ -637,3 +637,12 @@ input:focus {
 .error-msg {
     color: red !important;
 }
+
+.modalSuccessText {
+    margin: 0;
+    font-family: 'montserrat-arabic';
+    text-align: center;
+    color: green;
+    font-size: 20px;
+    font-weight: 600;
+}

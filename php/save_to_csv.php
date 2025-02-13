@@ -4,6 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $phone = $_POST['phone'];
     $investment = $_POST['investment'];
+    $timestamp = $_POST['timestamp'];
 
     $file_path = "../data/data.csv";
 
@@ -22,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $file = fopen($file_path, "a");
 
-    $data = [$new_id, $name, $phone, $investment];
+    $data = [$new_id, $name, $phone, $investment, $timestamp];
 
     if (fputcsv($file, $data)) {
         echo json_encode(['status' => 'success']);

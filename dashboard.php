@@ -184,6 +184,7 @@ if (file_exists($file_path) && filesize($file_path) > 0) {
                         <th>Name</th>
                         <th>Phone</th>
                         <th>Investment</th>
+                        <th>Time Stamp</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -193,6 +194,7 @@ if (file_exists($file_path) && filesize($file_path) > 0) {
                         <td><?php echo $row[1]; ?></td>
                         <td><?php echo $row[2]; ?></td>
                         <td><?php echo $row[3]; ?></td>
+                        <td class="timestamp" data-time="<?php echo $row[4]; ?>"></td>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>
@@ -203,23 +205,35 @@ if (file_exists($file_path) && filesize($file_path) > 0) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        document.documentElement.classList.add(savedTheme);
-        document.getElementById('theme-toggle').checked = savedTheme === 'dark-theme';
-    } else {
-        document.documentElement.classList.add('light-theme');
-        document.getElementById('theme-toggle').checked = false;
-    }
 
-    document.getElementById('theme-toggle').addEventListener('change', (e) => {
-        const newTheme = e.target.checked ? 'dark-theme' : 'light-theme';
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.classList.add(savedTheme);
+            document.getElementById('theme-toggle').checked = savedTheme === 'dark-theme';
+        } else {
+            document.documentElement.classList.add('light-theme');
+            document.getElementById('theme-toggle').checked = false;
+        }
 
-        document.documentElement.classList.remove('dark-theme', 'light-theme');
-        document.documentElement.classList.add(newTheme);
+        document.getElementById('theme-toggle').addEventListener('change', (e) => {
+            const newTheme = e.target.checked ? 'dark-theme' : 'light-theme';
 
-        localStorage.setItem('theme', newTheme);
-    });
+            document.documentElement.classList.remove('dark-theme', 'light-theme');
+            document.documentElement.classList.add(newTheme);
+
+            localStorage.setItem('theme', newTheme);
+        });
+
+        function convertToLocalTime(timestamp) {
+            const karachiDate = new Date(timestamp + " UTC");
+            return karachiDate.toLocaleString();
+        }
+
+        document.querySelectorAll('.timestamp').forEach(function(cell) {
+            const timestamp = cell.getAttribute('data-time');
+            cell.innerText = convertToLocalTime(timestamp);
+        });
+
     </script>
 
 </body>
