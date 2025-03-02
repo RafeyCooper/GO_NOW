@@ -74,8 +74,9 @@ nav {
 .link a {
     font-size: 16px;
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 800;
     color: #5b60f6;
+    font-family: 'montserrat-arabic';
 }
 
 .hamburger-icon {
